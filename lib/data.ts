@@ -15,6 +15,7 @@ function withWiki(boss: Boss): Boss {
   if (!entry) return boss;
   return {
     ...boss,
+    wikiSlug: boss.wikiSlug ?? entry.wikiSlug,
     wikiUrl: boss.wikiUrl ?? entry.wikiUrl,
     image: boss.image ?? entry.image,
   };
