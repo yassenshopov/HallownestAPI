@@ -3,11 +3,18 @@ import { Geist, Geist_Mono, Outfit } from "next/font/google";
 
 import "./globals.css";
 import { AuthProvider } from "@/components/auth-provider";
+import { Atmosphere } from "@/components/atmosphere";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
+import {
+  jsonLdScript,
+  organizationLd,
+  websiteLd,
+} from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,46 +35,67 @@ const outfit = Outfit({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:112";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "HallownestAPI — open API for Hollow Knight & Silksong",
-    template: "%s · HallownestAPI",
+    default: siteConfig.title,
+    template: siteConfig.titleTemplate,
   },
-  description:
-    "A free, structured, open-source API for Hollow Knight and Silksong data — bosses, charms, areas, items. Fan-made, non-commercial.",
-  keywords: [
-    "Hollow Knight",
-    "Silksong",
-    "Hallownest",
-    "API",
-    "Team Cherry",
-    "open data",
-    "fan project",
-  ],
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.author.name, url: siteConfig.author.url }],
+  creator: siteConfig.author.name,
+  publisher: siteConfig.author.name,
+  category: "reference",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
-    url: siteUrl,
-    siteName: "HallownestAPI",
-    title: "HallownestAPI — open API for Hollow Knight & Silksong",
-    description:
-      "A free, structured, open-source API for Hollow Knight and Silksong data.",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.shortDescription,
+    locale: siteConfig.locale,
   },
   twitter: {
     card: "summary_large_image",
-    title: "HallownestAPI",
-    description:
-      "A free, structured, open-source API for Hollow Knight and Silksong data.",
+    title: siteConfig.name,
+    description: siteConfig.shortDescription,
+    creator: "@teamcherrygames",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  // `app/manifest.ts` is picked up automatically, but tagging it here makes
+  // the link explicit for crawlers that hit the HTML before the manifest.
+  manifest: "/manifest.webmanifest",
 };
 
 export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0f" },
+    { media: "(prefers-color-scheme: light)", color: siteConfig.themeColor.light },
+    { media: "(prefers-color-scheme: dark)", color: siteConfig.themeColor.dark },
   ],
+  colorScheme: "dark light",
 };
 
 export default function RootLayout({
@@ -77,10 +105,28 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang={siteConfig.language}
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} h-full antialiased`}
+      // bg lives on <html> (not <body>) so the fixed -z-10 Atmosphere layer
+      // inside the body actually shows through; an opaque body would paint
+      // over any negative-z sibling.
+      className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} h-full bg-background text-foreground antialiased`}
     >
+      <head>
+        {/* Structured data — Organization + WebSite. Rendered server-side so
+            crawlers see it without executing JS. Two separate <script> tags
+            (instead of a graph) so individual blocks remain inspectable. */}
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD payload is built from a typed constant.
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(organizationLd()) }}
+        />
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD payload is built from a typed constant.
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(websiteLd()) }}
+        />
+      </head>
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <AuthProvider>
           <ThemeProvider
