@@ -1,0 +1,17 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "path-of-pain",
+  name: "Path of Pain",
+  game: "hk",
+  kind: "subarea",
+  parent: "white-palace",
+  connectsTo: ["white-palace"],
+  summary:
+    "A brutal optional platforming chamber hidden in the White Palace. Rewards completion with a memory of the Pale King and the Hollow Knight's birth.",
+  verified: false,
+  wikiSlug: "Path_of_Pain",
+  sources: ["https://hollowknight.fandom.com/wiki/Path_of_Pain"],
+});
+
+export default data;

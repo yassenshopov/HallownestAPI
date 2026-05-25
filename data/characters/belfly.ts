@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "belfly",
+  name: "Belfly",
+  game: "hk",
+  kind: "enemy",
+  role: "Suicide bomber",
+  area: { slug: "fungal-wastes", name: "Fungal Wastes" },
+  hp: 1,
+  damage: 1,
+  geoDrop: 1,
+  hunterJournal: {
+    notes:
+      "Bloated flier filled with combustible gas. Pursues the Knight relentlessly, then ignites on contact.",
+  },
+  summary:
+    "Tiny but lethal flier — one touch and it explodes. Best handled with spells or a careful nail swing from below.",
+  verified: false,
+  wikiSlug: "Belfly",
+  sources: ["https://hollowknight.fandom.com/wiki/Belfly"],
+});
+
+export default data;

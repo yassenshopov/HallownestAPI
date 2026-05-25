@@ -1,0 +1,21 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "cloth",
+  name: "Cloth",
+  game: "hk",
+  kind: "warrior",
+  role: "Warrior pilgrim",
+  area: { slug: "fungal-wastes", name: "Fungal Wastes" },
+  location:
+    "First met in the Fungal Wastes. Travels onward to Deepnest, the Colosseum, and Kingdom's Edge.",
+  summary:
+    "Big-hearted warrior with a bigger nail. Searches Hallownest for a fight worthy of her, and finds one in the Colosseum.",
+  description:
+    "Quest depends on talking to her at every step. If completed, she goes out on her own terms helping the Knight against Traitor Lord in the Queen's Gardens.",
+  verified: false,
+  wikiSlug: "Cloth",
+  sources: ["https://hollowknight.fandom.com/wiki/Cloth"],
+});
+
+export default data;

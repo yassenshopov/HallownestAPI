@@ -1,0 +1,29 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "deepnest",
+  name: "Deepnest",
+  game: "hk",
+  kind: "region",
+  connectsTo: [
+    "fungal-wastes",
+    "mantis-village",
+    "ancient-basin",
+    "kingdoms-edge",
+    "distant-village",
+    "beasts-den",
+    "weavers-den",
+    "failed-tramway",
+  ],
+  stagStation: "Distant Village",
+  music: "Deepnest",
+  summary:
+    "A pitch-black warren of spiders, centipedes, and the husks of the Weavers. Home to Nosk, Galien, and the Distant Village.",
+  description:
+    "Most of the area resists mapping — the Knight must navigate by glow-lamp and instinct until Cornifer's wife Iselda buys the relevant scroll.",
+  verified: false,
+  wikiSlug: "Deepnest",
+  sources: ["https://hollowknight.fandom.com/wiki/Deepnest"],
+});
+
+export default data;

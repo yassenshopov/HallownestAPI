@@ -1,0 +1,23 @@
+import { CharmSchema, type Charm } from "@/lib/schema";
+
+const data: Charm = CharmSchema.parse({
+  slug: "gathering-swarm",
+  name: "Gathering Swarm",
+  game: "hk",
+  notchCost: 2,
+  inventoryOrder: 3,
+  effect: "A swarm of flies retrieves dropped geo for you.",
+  description:
+    "Loose geo that scatters when the Knight takes damage is automatically pulled back. Most useful in early-game grinds.",
+  cost: 300,
+  area: { slug: "dirtmouth", name: "Dirtmouth" },
+  merchant: "sly",
+  acquisition: "purchase",
+  location: "Sly's shop in Dirtmouth.",
+  summary: "Recovers scattered geo automatically.",
+  verified: false,
+  wikiSlug: "Gathering_Swarm",
+  sources: ["https://hollowknight.fandom.com/wiki/Gathering_Swarm"],
+});
+
+export default data;

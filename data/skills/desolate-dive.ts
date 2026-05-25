@@ -1,0 +1,22 @@
+import { SkillSchema, type Skill } from "@/lib/schema";
+
+const data: Skill = SkillSchema.parse({
+  slug: "desolate-dive",
+  name: "Desolate Dive",
+  game: "hk",
+  kind: "spell",
+  soulCost: 33,
+  damage: 35,
+  effect: "Smash downward with a soul-empowered nail blast.",
+  description:
+    "Launches the Knight straight down. Damages enemies on impact and produces a shockwave that breaks soul-cracked floors.",
+  acquisition: "Reward for defeating the Soul Master atop the Soul Sanctum.",
+  area: { slug: "soul-sanctum", name: "Soul Sanctum" },
+  upgradesTo: "descending-dark",
+  summary: "Soul-powered ground slam. Required to break soft floors.",
+  verified: false,
+  wikiSlug: "Desolate_Dive",
+  sources: ["https://hollowknight.fandom.com/wiki/Desolate_Dive"],
+});
+
+export default data;

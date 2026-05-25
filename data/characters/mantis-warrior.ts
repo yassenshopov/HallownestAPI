@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "mantis-warrior",
+  name: "Mantis Warrior",
+  game: "hk",
+  kind: "enemy",
+  role: "Mantis Village guard",
+  area: { slug: "fungal-wastes", name: "Fungal Wastes" },
+  hp: 55,
+  damage: 1,
+  geoDrop: 35,
+  hunterJournal: {
+    notes:
+      "Full-grown mantis. Strikes with a long curved nail, hops to read range, and flips overhead to reset.",
+  },
+  summary:
+    "Adult mantis with full combat training. Patrols the Mantis Village and salutes the Knight after being defeated.",
+  verified: false,
+  wikiSlug: "Mantis_Warrior",
+  sources: ["https://hollowknight.fandom.com/wiki/Mantis_Warrior"],
+});
+
+export default data;

@@ -1,0 +1,29 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "forgotten-crossroads",
+  name: "Forgotten Crossroads",
+  game: "hk",
+  kind: "region",
+  connectsTo: [
+    "dirtmouth",
+    "greenpath",
+    "fungal-wastes",
+    "crystal-peak",
+    "resting-grounds",
+    "ancient-basin",
+    "ancestral-mound",
+    "temple-of-the-black-egg",
+  ],
+  stagStation: "Forgotten Crossroads Stag",
+  music: { title: "Crossroads", spotifyTrackId: "2fwLXYI6N8l4tOY4ntSiUZ" },
+  summary:
+    "The shattered hub of upper Hallownest. Branches outwards to almost every other major region and houses the False Knight, Brooding Mawlek, and the Temple of the Black Egg.",
+  description:
+    "Once a busy thoroughfare; now half-collapsed and crawling with Husks. Becomes the Infected Crossroads after the Dreamers are awakened, swapping the tracks and reseeding it with infected variants.",
+  verified: false,
+  wikiSlug: "Forgotten_Crossroads",
+  sources: ["https://hollowknight.fandom.com/wiki/Forgotten_Crossroads"],
+});
+
+export default data;

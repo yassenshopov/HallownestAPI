@@ -1,0 +1,19 @@
+import { SkillSchema, type Skill } from "@/lib/schema";
+
+const data: Skill = SkillSchema.parse({
+  slug: "mantis-claw",
+  name: "Mantis Claw",
+  game: "hk",
+  kind: "movement",
+  effect: "Wall-cling and wall-jump from any vertical surface.",
+  description:
+    "Allows the Knight to grip walls and leap off them. The single biggest exploration unlock in the entire game.",
+  acquisition: "Defeat the Mantis Lords in the Fungal Wastes.",
+  area: { slug: "mantis-village", name: "Mantis Village" },
+  summary: "Wall-cling and wall-jump. Granted by the Mantis Lords.",
+  verified: false,
+  wikiSlug: "Mantis_Claw",
+  sources: ["https://hollowknight.fandom.com/wiki/Mantis_Claw"],
+});
+
+export default data;

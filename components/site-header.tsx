@@ -7,6 +7,10 @@ import { siteConfig } from "@/lib/site-config";
 
 const nav = [
   { href: "/bosses", label: "Bosses" },
+  { href: "/characters", label: "Characters" },
+  { href: "/areas", label: "Areas" },
+  { href: "/charms", label: "Charms" },
+  { href: "/skills", label: "Skills" },
   { href: "/docs", label: "Docs" },
   { href: "/api/v1", label: "API" },
 ];

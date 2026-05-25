@@ -1,0 +1,24 @@
+import { CharmSchema, type Charm } from "@/lib/schema";
+
+const data: Charm = CharmSchema.parse({
+  slug: "unbreakable-greed",
+  name: "Unbreakable Greed",
+  game: "hk",
+  notchCost: 2,
+  inventoryOrder: 13,
+  effect: "Enemies drop 20% more geo. No longer breaks on death.",
+  description:
+    "Permanent version of Fragile Greed, forged by Divine for 9,000 geo on top of the broken charm.",
+  cost: 9000,
+  area: { slug: "dirtmouth", name: "Dirtmouth" },
+  merchant: "divine",
+  acquisition: "purchase",
+  upgradeOf: "fragile-greed",
+  location: "Divine's tent in Dirtmouth, after the Grimm Troupe arrives.",
+  summary: "Unbreakable +20% geo drops.",
+  verified: false,
+  wikiSlug: "Unbreakable_Greed",
+  sources: ["https://hollowknight.fandom.com/wiki/Unbreakable_Greed"],
+});
+
+export default data;

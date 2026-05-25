@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "wandering-husk",
+  name: "Wandering Husk",
+  game: "hk",
+  kind: "enemy",
+  role: "Infected commoner",
+  area: { slug: "forgotten-crossroads", name: "Forgotten Crossroads" },
+  hp: 15,
+  damage: 1,
+  geoDrop: 4,
+  hunterJournal: {
+    notes:
+      "Husk shell of an old Hallownest citizen, drained of mind and will by the Infection. Stumbles forward looking for prey.",
+  },
+  summary:
+    "The textbook Hallownest zombie. Walks in a straight line and swings a slow uppercut when close.",
+  verified: false,
+  wikiSlug: "Wandering_Husk",
+  sources: ["https://hollowknight.fandom.com/wiki/Wandering_Husk"],
+});
+
+export default data;

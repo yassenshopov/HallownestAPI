@@ -1,0 +1,17 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "pantheons",
+  name: "Pantheons",
+  game: "hk",
+  kind: "subarea",
+  parent: "godhome",
+  connectsTo: ["godhome"],
+  summary:
+    "Five linear boss rushes housed in Godhome. The Master, Artist, Sage, Knight, and Hallownest pantheons that culminate in Absolute Radiance.",
+  verified: false,
+  wikiSlug: "Pantheon_of_Hallownest",
+  sources: ["https://hollowknight.fandom.com/wiki/Pantheons"],
+});
+
+export default data;

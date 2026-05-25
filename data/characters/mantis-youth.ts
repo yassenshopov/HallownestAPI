@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "mantis-youth",
+  name: "Mantis Youth",
+  game: "hk",
+  kind: "enemy",
+  role: "Adolescent mantis warrior",
+  area: { slug: "fungal-wastes", name: "Fungal Wastes" },
+  hp: 25,
+  damage: 1,
+  geoDrop: 20,
+  hunterJournal: {
+    notes:
+      "Young mantis still in training. Quick on the ground and air, learning the same nail forms as its elders.",
+  },
+  summary:
+    "Mantis Village's young initiate. Dash-slashes and somersaults with surprising range.",
+  verified: false,
+  wikiSlug: "Mantis_Youth",
+  sources: ["https://hollowknight.fandom.com/wiki/Mantis_Youth"],
+});
+
+export default data;

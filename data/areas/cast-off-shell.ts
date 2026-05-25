@@ -1,0 +1,17 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "cast-off-shell",
+  name: "Cast-Off Shell",
+  game: "hk",
+  kind: "subarea",
+  parent: "kingdoms-edge",
+  connectsTo: ["kingdoms-edge"],
+  summary:
+    "The hollowed husk of the Pale Wyrm, towering at the edge of the kingdom. Inside lurks Markoth's dream tablet at the summit and a fragile bench halfway up.",
+  verified: false,
+  wikiSlug: "Kingdom%27s_Edge",
+  sources: ["https://hollowknight.fandom.com/wiki/Kingdom%27s_Edge"],
+});
+
+export default data;

@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "baldur",
+  name: "Baldur",
+  game: "hk",
+  kind: "enemy",
+  role: "Spitting shell-bug",
+  area: { slug: "howling-cliffs", name: "Howling Cliffs" },
+  hp: 30,
+  damage: 1,
+  geoDrop: 5,
+  hunterJournal: {
+    notes:
+      "Bulbous bug with a near-impenetrable shell. Spits sticky pods. Vulnerable from below or behind once it ducks in.",
+  },
+  summary:
+    "Round, helmet-shelled enemy found around the Cliffs and Greenpath. Spits projectiles, then retreats into its shell.",
+  verified: false,
+  wikiSlug: "Baldur",
+  sources: ["https://hollowknight.fandom.com/wiki/Baldur"],
+});
+
+export default data;

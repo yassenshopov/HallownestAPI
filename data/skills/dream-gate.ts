@@ -1,0 +1,20 @@
+import { SkillSchema, type Skill } from "@/lib/schema";
+
+const data: Skill = SkillSchema.parse({
+  slug: "dream-gate",
+  name: "Dream Gate",
+  game: "hk",
+  kind: "dream",
+  effect: "Place a portable warp point that the Knight can return to at any time.",
+  description:
+    "Plant a dream-gate marker anywhere in Hallownest, then warp back from any bench or rest spot. Cuts hours off of late-game backtracking.",
+  acquisition:
+    "Purchased from the Seer for 600 dream essence in Spirit's Glade.",
+  area: { slug: "spirits-glade", name: "Spirit's Glade" },
+  summary: "Plantable warp point. Game-changing for late-game traversal.",
+  verified: false,
+  wikiSlug: "Dream_Gate",
+  sources: ["https://hollowknight.fandom.com/wiki/Dream_Gate"],
+});
+
+export default data;

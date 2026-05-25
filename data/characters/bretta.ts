@@ -1,0 +1,21 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "bretta",
+  name: "Bretta",
+  game: "hk",
+  kind: "npc",
+  role: "Rescued Dirtmouth resident",
+  area: { slug: "dirtmouth", name: "Dirtmouth" },
+  location:
+    "Initially trapped in Fungal Wastes. After rescue, moves into a house in Dirtmouth.",
+  summary:
+    "Dreamy bug rescued from a pit in the Fungal Wastes. Has a wandering crush — first on the Knight, then on Zote.",
+  description:
+    "Reading her diary in Dirtmouth advances the Grey Prince Zote dream-boss questline. Awarding her affection unlocks the Mask Shard hidden in her basement.",
+  verified: false,
+  wikiSlug: "Bretta",
+  sources: ["https://hollowknight.fandom.com/wiki/Bretta"],
+});
+
+export default data;

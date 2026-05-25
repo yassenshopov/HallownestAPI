@@ -15,6 +15,14 @@ export function GET(request: Request) {
       endpoints: {
         bosses: `${root}/boss`,
         boss: `${root}/boss/{slug}`,
+        characters: `${root}/character`,
+        character: `${root}/character/{slug}`,
+        areas: `${root}/area`,
+        area: `${root}/area/{slug}`,
+        charms: `${root}/charm`,
+        charm: `${root}/charm/{slug}`,
+        skills: `${root}/skill`,
+        skill: `${root}/skill/{slug}`,
       },
     },
     {

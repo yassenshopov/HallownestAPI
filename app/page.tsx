@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Database, GitBranch, ScrollText, Sparkles } from "lucide-react";
 
@@ -6,7 +7,20 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HollowMark } from "@/components/hollow-mark";
 import { CodeBlock } from "@/components/code-block";
+import { areas } from "@/data/areas";
 import { bosses } from "@/data/bosses";
+import { characters } from "@/data/characters";
+import { charms } from "@/data/charms";
+import { skills } from "@/data/skills";
+import { type CharacterKind } from "@/lib/schema";
+import { apiReferenceLd, buildMetadata, jsonLdScript } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  path: "/",
+  // Root layout already exposes the full default title; rely on it.
+  description:
+    "A free, open-source REST API for Hollow Knight and Silksong data — bosses, charms, areas, characters, and skills. JSON in, JSON out, no API key required.",
+});
 
 const sampleResponse = `{
   "slug": "false-knight",
@@ -33,9 +47,22 @@ const boss = await res.json();`;
 export default function HomePage() {
   const hkCount = bosses.filter((b) => b.game === "hk").length;
   const ssCount = bosses.filter((b) => b.game === "silksong").length;
+  const enemyCount = characters.filter(
+    (c) => c.kind === ("enemy" satisfies CharacterKind),
+  ).length;
+  const npcCount = characters.length - enemyCount;
+  const regionCount = areas.filter((a) => a.kind === "region").length;
+  const subareaCount = areas.length - regionCount;
+  // Surfaced collection types on the landing grid — keep in sync with /api/v1.
+  const totalEndpoints = 11;
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD payload is built from a typed constant.
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(apiReferenceLd()) }}
+      />
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
         <div
@@ -78,14 +105,27 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="mt-12 grid w-full max-w-3xl gap-4 sm:grid-cols-3">
+            <div className="mt-12 grid w-full max-w-3xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <StatCard
-                label="Bosses indexed"
+                label="Bosses"
                 value={bosses.length}
                 sub={`${hkCount} HK · ${ssCount} Silksong`}
               />
-              <StatCard label="Endpoints" value={2} sub="REST · v1" />
-              <StatCard label="Cost" value="Free" sub="Forever, no key" />
+              <StatCard
+                label="Characters"
+                value={characters.length}
+                sub={`${npcCount} NPCs · ${enemyCount} enemies`}
+              />
+              <StatCard
+                label="Areas"
+                value={areas.length}
+                sub={`${regionCount} regions · ${subareaCount} sub-areas`}
+              />
+              <StatCard
+                label="Charms"
+                value={charms.length}
+                sub={`${skills.length} skills · ${totalEndpoints} endpoints`}
+              />
             </div>
           </div>
         </div>
@@ -141,7 +181,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <LinkCard
             href="/docs"
             title="Quickstart"
@@ -150,12 +190,27 @@ export default function HomePage() {
           <LinkCard
             href="/bosses"
             title="Browse bosses"
-            body="See what’s currently indexed. Click any to view the raw payload."
+            body="46 bosses, each with HP, phases, attacks, and a JSON payload."
           />
           <LinkCard
-            href="/docs/schema"
-            title="Schema reference"
-            body="Every field, type, and constraint. Generated from Zod."
+            href="/characters"
+            title="Browse characters"
+            body="NPCs, merchants, dream warriors, and Hunter's Journal entries."
+          />
+          <LinkCard
+            href="/areas"
+            title="Browse areas"
+            body="Regions and sub-areas with connection graphs and what's inside."
+          />
+          <LinkCard
+            href="/charms"
+            title="Browse charms"
+            body="All 45 charm slots — notch cost, location, synergies, and upgrades."
+          />
+          <LinkCard
+            href="/skills"
+            title="Browse skills"
+            body="Spells, nail arts, dream tools, and movement abilities."
           />
         </div>
       </section>

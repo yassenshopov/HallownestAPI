@@ -1,0 +1,24 @@
+import { CharmSchema, type Charm } from "@/lib/schema";
+
+const data: Charm = CharmSchema.parse({
+  slug: "longnail",
+  name: "Longnail",
+  game: "hk",
+  notchCost: 2,
+  inventoryOrder: 19,
+  effect: "Increases the range of the Knight's nail.",
+  description:
+    "+15% nail range. Stacks additively with Mark of Pride for the longest possible reach in the game.",
+  cost: 300,
+  area: { slug: "forgotten-crossroads", name: "Forgotten Crossroads" },
+  merchant: "salubra",
+  acquisition: "purchase",
+  location: "Salubra's hut in the Forgotten Crossroads.",
+  synergies: ["mark-of-pride", "grubberflys-elegy"],
+  summary: "+15% nail range. Stack with Mark of Pride for maximum reach.",
+  verified: false,
+  wikiSlug: "Longnail",
+  sources: ["https://hollowknight.fandom.com/wiki/Longnail"],
+});
+
+export default data;

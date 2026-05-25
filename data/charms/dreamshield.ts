@@ -1,0 +1,23 @@
+import { CharmSchema, type Charm } from "@/lib/schema";
+
+const data: Charm = CharmSchema.parse({
+  slug: "dreamshield",
+  name: "Dreamshield",
+  game: "hk",
+  notchCost: 3,
+  inventoryOrder: 39,
+  effect:
+    "A shield orbits the Knight, blocking projectiles and damaging enemies.",
+  description:
+    "Spins a small protective shield around the Knight. Blocks small projectiles and deals minor contact damage; pauses when Focusing.",
+  area: { slug: "resting-grounds", name: "Resting Grounds" },
+  acquisition: "find",
+  location:
+    "Resting Grounds — behind a hidden wall in the lower section, requires Desolate Dive.",
+  summary: "Orbiting shield. Blocks projectiles, chips enemies.",
+  verified: false,
+  wikiSlug: "Dreamshield",
+  sources: ["https://hollowknight.fandom.com/wiki/Dreamshield"],
+});
+
+export default data;

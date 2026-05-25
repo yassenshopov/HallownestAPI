@@ -1,0 +1,24 @@
+import { CharmSchema, type Charm } from "@/lib/schema";
+
+const data: Charm = CharmSchema.parse({
+  slug: "grubsong",
+  name: "Grubsong",
+  game: "hk",
+  notchCost: 1,
+  inventoryOrder: 10,
+  effect: "Recover SOUL each time the Knight takes damage.",
+  description:
+    "Gain 10 SOUL per mask of damage taken. Trivializes Focus-based survival when paired with Quick Focus.",
+  area: { slug: "forgotten-crossroads", name: "Forgotten Crossroads" },
+  acquisition: "quest",
+  location:
+    "Grubfather's reward for rescuing 10 grubs across Hallownest.",
+  upgradesTo: "grubberflys-elegy",
+  synergies: ["quick-focus", "jonis-blessing"],
+  summary: "Heals SOUL on damage. Grubfather's first thank-you.",
+  verified: false,
+  wikiSlug: "Grubsong",
+  sources: ["https://hollowknight.fandom.com/wiki/Grubsong"],
+});
+
+export default data;

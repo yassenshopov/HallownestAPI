@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "tiktik",
+  name: "Tiktik",
+  game: "hk",
+  kind: "enemy",
+  role: "Skittish crawler",
+  area: { slug: "forgotten-crossroads", name: "Forgotten Crossroads" },
+  hp: 5,
+  damage: 1,
+  geoDrop: 1,
+  hunterJournal: {
+    notes:
+      "Timid creature that scurries away from anything that moves. Its shell offers little protection.",
+  },
+  summary:
+    "Harmless beetle that runs from the Knight. Easy geo for anyone patient enough to chase it.",
+  verified: false,
+  wikiSlug: "Tiktik",
+  sources: ["https://hollowknight.fandom.com/wiki/Tiktik"],
+});
+
+export default data;

@@ -1,0 +1,24 @@
+import { CharmSchema, type Charm } from "@/lib/schema";
+
+const data: Charm = CharmSchema.parse({
+  slug: "spore-shroom",
+  name: "Spore Shroom",
+  game: "hk",
+  notchCost: 1,
+  inventoryOrder: 33,
+  effect:
+    "Releases a damaging spore cloud while the Knight is focusing.",
+  description:
+    "Triggers a small poison cloud every time the Knight Focuses to heal. Pairs with Defender's Crest for permanent stacked poison.",
+  area: { slug: "fungal-wastes", name: "Fungal Wastes" },
+  acquisition: "find",
+  location:
+    "Fungal Wastes — found in a hidden alcove near the Mushroom Lord's grave site.",
+  synergies: ["defenders-crest", "deep-focus", "quick-focus"],
+  summary: "Damaging spore cloud on every Focus.",
+  verified: false,
+  wikiSlug: "Spore_Shroom",
+  sources: ["https://hollowknight.fandom.com/wiki/Spore_Shroom"],
+});
+
+export default data;

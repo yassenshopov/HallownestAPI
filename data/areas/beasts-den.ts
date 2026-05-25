@@ -1,0 +1,17 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "beasts-den",
+  name: "Beast's Den",
+  game: "hk",
+  kind: "subarea",
+  parent: "deepnest",
+  connectsTo: ["deepnest", "distant-village"],
+  summary:
+    "Herrah the Beast's private chamber, beyond a sealed Tram-Pass door. Reached at the climax of Deepnest to dispatch the third Dreamer.",
+  verified: false,
+  wikiSlug: "Beast%27s_Den",
+  sources: ["https://hollowknight.fandom.com/wiki/Beast%27s_Den"],
+});
+
+export default data;

@@ -1,0 +1,17 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "pleasure-house",
+  name: "Pleasure House",
+  game: "hk",
+  kind: "subarea",
+  parent: "city-of-tears",
+  connectsTo: ["city-of-tears"],
+  summary:
+    "An exclusive bathhouse perched on the City rooftops, accessed with the Simple Key. Houses a bench and a charm notch.",
+  verified: false,
+  wikiSlug: "Pleasure_House",
+  sources: ["https://hollowknight.fandom.com/wiki/Pleasure_House"],
+});
+
+export default data;

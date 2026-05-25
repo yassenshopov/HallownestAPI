@@ -1,0 +1,18 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "distant-village",
+  name: "Distant Village",
+  game: "hk",
+  kind: "subarea",
+  parent: "deepnest",
+  connectsTo: ["deepnest"],
+  stagStation: "Distant Village",
+  summary:
+    "An eerie wooden hamlet deep in Deepnest, hung over a corpse-strewn ravine. The site of Herrah's tomb and the Beast's Den entrance.",
+  verified: false,
+  wikiSlug: "Distant_Village",
+  sources: ["https://hollowknight.fandom.com/wiki/Distant_Village"],
+});
+
+export default data;

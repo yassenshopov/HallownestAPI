@@ -1,0 +1,18 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "queens-station",
+  name: "Queen's Station",
+  game: "hk",
+  kind: "subarea",
+  parent: "fungal-wastes",
+  connectsTo: ["fungal-wastes", "fog-canyon"],
+  stagStation: "Queen's Station",
+  summary:
+    "A Stag station nestled on the border of the Fungal Wastes and Fog Canyon. Hosts a bench, a map vendor encounter, and a Vessel Fragment.",
+  verified: false,
+  wikiSlug: "Queen%27s_Station",
+  sources: ["https://hollowknight.fandom.com/wiki/Queen%27s_Station"],
+});
+
+export default data;

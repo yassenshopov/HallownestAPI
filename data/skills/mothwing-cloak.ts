@@ -1,0 +1,20 @@
+import { SkillSchema, type Skill } from "@/lib/schema";
+
+const data: Skill = SkillSchema.parse({
+  slug: "mothwing-cloak",
+  name: "Mothwing Cloak",
+  game: "hk",
+  kind: "movement",
+  effect: "Dash forward through the air.",
+  description:
+    "Grants a short horizontal dash on cooldown. Foundational mobility — required to cross most gaps in Greenpath and beyond.",
+  acquisition: "Defeat Hornet in Greenpath.",
+  area: { slug: "greenpath", name: "Greenpath" },
+  upgradesTo: "shade-cloak",
+  summary: "Short forward dash. Hornet's gift after Greenpath.",
+  verified: false,
+  wikiSlug: "Mothwing_Cloak",
+  sources: ["https://hollowknight.fandom.com/wiki/Mothwing_Cloak"],
+});
+
+export default data;

@@ -52,7 +52,11 @@ components/
   docs-shell.tsx             DocsPage / DocsSection
   auth-provider.tsx          Clerk, opt-in via env
 data/
+  areas/                     One file per area / sub-area (Region or Subarea)
   bosses/                    One file per boss; default-exports a validated Boss
+  characters/                NPCs, merchants, dream warriors, Hunter's Journal enemies
+  charms/                    All 45 charm slots (Fragile/Unbreakable as separate entries)
+  skills/                    Spells, nail arts, dream tools, movement abilities
 lib/
   schema.ts                  Zod schemas
   data.ts                    In-memory query helpers (filter/paginate)
@@ -98,17 +102,28 @@ HallownestAPI does not host these images.
 
 ## Coverage
 
-- **46 bosses** indexed in `v0`, covering the full Hollow Knight roster
+- **46 bosses** indexed, covering the full Hollow Knight roster
   (base game, Dream Warriors / Variants, Hidden Dreams, Grimm Troupe, Lifeblood,
   Godmaster Pantheons).
+- **28 characters** — NPCs, merchants, dream warriors, and Hunter's Journal
+  enemies. New entries are easy PRs.
+- **53 areas** — every Hollow Knight region plus their named sub-areas
+  (Ancestral Mound, Soul Sanctum, Mantis Village, Path of Pain, Pantheons, …)
+  with a connection graph between them.
+- **45 charm slots** — including the Fragile/Unbreakable upgrade pairs and
+  Kingsoul/Void Heart, with notch cost, merchant, synergies, and where to
+  find them.
+- **18 skills** — spells, nail arts, dream tools, and movement abilities,
+  including their upgraded forms.
 - Silksong coverage is held back until release-week dust settles. Reserved
   in the schema (`game: "silksong"`).
 
 ## Roadmap
 
-- **v0** (now): bosses only, REST list + detail, docs.
-- **v1**: full HK coverage, Silksong coverage, OpenAPI spec, generated SDKs.
-- **v2**: areas with connection graph, charms/crests, items, GraphQL.
+- **v0** (now): bosses, characters, areas, charms, skills — REST list + detail, docs.
+- **v1**: complete the synergy and connection graphs, Silksong coverage,
+  OpenAPI spec, generated SDKs.
+- **v2**: items, relics, pantheons, mask shards + vessel fragments, GraphQL.
 - **v3**: user accounts (Supabase + Clerk), saved builds, community PR pipeline.
 
 ## Legal

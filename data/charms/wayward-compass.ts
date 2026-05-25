@@ -1,0 +1,24 @@
+import { CharmSchema, type Charm } from "@/lib/schema";
+
+const data: Charm = CharmSchema.parse({
+  slug: "wayward-compass",
+  name: "Wayward Compass",
+  game: "hk",
+  notchCost: 1,
+  inventoryOrder: 2,
+  effect: "Reveals the Knight's location on the map.",
+  description:
+    "Without this charm, the map only shows rooms — not where you are inside them. Often the first charm players buy.",
+  cost: 220,
+  area: { slug: "dirtmouth", name: "Dirtmouth" },
+  merchant: "sly",
+  acquisition: "purchase",
+  location: "Sly's shop in Dirtmouth.",
+  summary:
+    "Adds the Knight's position to the map. Most players' first charm purchase.",
+  verified: false,
+  wikiSlug: "Wayward_Compass",
+  sources: ["https://hollowknight.fandom.com/wiki/Wayward_Compass"],
+});
+
+export default data;

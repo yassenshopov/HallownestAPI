@@ -1,0 +1,17 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "weavers-den",
+  name: "Weavers' Den",
+  game: "hk",
+  kind: "subarea",
+  parent: "deepnest",
+  connectsTo: ["deepnest"],
+  summary:
+    "The abandoned silken hall of the Weavers, deep within Deepnest. Source of the Weaversong charm.",
+  verified: false,
+  wikiSlug: "Weavers%27_Den",
+  sources: ["https://hollowknight.fandom.com/wiki/Weavers%27_Den"],
+});
+
+export default data;

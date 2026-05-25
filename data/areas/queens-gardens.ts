@@ -1,0 +1,18 @@
+import { AreaSchema, type Area } from "@/lib/schema";
+
+const data: Area = AreaSchema.parse({
+  slug: "queens-gardens",
+  name: "Queen's Gardens",
+  game: "hk",
+  kind: "region",
+  connectsTo: ["greenpath", "fog-canyon", "deepnest", "stag-nest"],
+  stagStation: "Queen's Gardens Stag",
+  music: { title: "Queen's Gardens", spotifyTrackId: "1lJySpoTdGHcTV4OTaluls" },
+  summary:
+    "An overgrown royal garden of long thorns and Mantis traitors. Houses Marmu, Traitor Lord, and the White Lady's chamber.",
+  verified: false,
+  wikiSlug: "Queen%27s_Gardens",
+  sources: ["https://hollowknight.fandom.com/wiki/Queen%27s_Gardens"],
+});
+
+export default data;

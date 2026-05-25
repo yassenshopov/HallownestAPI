@@ -1,0 +1,22 @@
+import { SkillSchema, type Skill } from "@/lib/schema";
+
+const data: Skill = SkillSchema.parse({
+  slug: "shade-soul",
+  name: "Shade Soul",
+  game: "hk",
+  kind: "spell",
+  soulCost: 33,
+  damage: 30,
+  effect: "Launch a darker, more powerful spirit at enemies.",
+  description:
+    "Vengeful Spirit's upgraded form. Doubles damage and travels slightly faster, with a heavier, void-touched visual.",
+  acquisition: "Found in a hidden chamber accessed via the Pleasure House and the Tower of Love key.",
+  area: { slug: "city-of-tears", name: "City of Tears" },
+  upgradeOf: "vengeful-spirit",
+  summary: "Vengeful Spirit's stronger form. 30 damage for 33 SOUL.",
+  verified: false,
+  wikiSlug: "Shade_Soul",
+  sources: ["https://hollowknight.fandom.com/wiki/Shade_Soul"],
+});
+
+export default data;

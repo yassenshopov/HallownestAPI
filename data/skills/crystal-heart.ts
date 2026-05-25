@@ -1,0 +1,20 @@
+import { SkillSchema, type Skill } from "@/lib/schema";
+
+const data: Skill = SkillSchema.parse({
+  slug: "crystal-heart",
+  name: "Crystal Heart",
+  game: "hk",
+  kind: "movement",
+  effect: "Channel crystal energy to dash across long distances.",
+  description:
+    "Hold the skill button to charge, then release for a long horizontal or vertical super-dash. Required to clear several crystal-walled rooms.",
+  acquisition:
+    "Found in the deepest chamber of Crystal Peak, past the Crystal Guardian.",
+  area: { slug: "crystal-peak", name: "Crystal Peak" },
+  summary: "Long charge-and-release super-dash from Crystal Peak.",
+  verified: false,
+  wikiSlug: "Crystal_Heart",
+  sources: ["https://hollowknight.fandom.com/wiki/Crystal_Heart"],
+});
+
+export default data;

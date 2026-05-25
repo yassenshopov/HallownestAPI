@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Badge } from "@/components/ui/badge";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CodeBlock } from "@/components/code-block";
 import { DocsPage, DocsSection } from "@/components/docs-shell";
 
@@ -11,11 +12,18 @@ export const metadata: Metadata = {
 
 export default function EndpointsPage() {
   return (
-    <DocsPage
-      eyebrow="Reference"
-      title="Endpoints"
-      description="HallownestAPI v1 — REST, no auth, JSON responses."
-    >
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Docs", href: "/docs" },
+          { label: "Endpoints" },
+        ]}
+      />
+      <DocsPage
+        eyebrow="Reference"
+        title="Endpoints"
+        description="HallownestAPI v1 — REST, no auth, JSON responses."
+      >
       <DocsSection title="Base URL">
         <CodeBlock language="bash" code={`https://hallownestapi.dev/api/v1`} />
       </DocsSection>
@@ -82,7 +90,202 @@ export default function EndpointsPage() {
   "summary": "..."
 }`}
       />
-    </DocsPage>
+
+      <Endpoint
+        method="GET"
+        path="/api/v1/character"
+        description="Paginated list of characters — NPCs, merchants, Hunter's Journal enemies, and dream warriors."
+        params={[
+          { name: "game", type: "hk | silksong", desc: "Filter by game." },
+          {
+            name: "kind",
+            type: "npc | merchant | enemy | warrior",
+            desc: "Filter by character kind.",
+          },
+          {
+            name: "area",
+            type: "slug",
+            desc: "Filter by the slug of the character's primary area.",
+          },
+          { name: "search", type: "string", desc: "Substring match on name, slug, role, or area." },
+          { name: "limit", type: "number", desc: "1–100, default 20." },
+          { name: "offset", type: "number", desc: "Default 0." },
+        ]}
+        example={`{
+  "count": 28,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "slug": "cornifer",
+      "name": "Cornifer",
+      "game": "hk",
+      "kind": "npc",
+      "role": "Cartographer",
+      "area": { "slug": "forgotten-crossroads", "name": "Forgotten Crossroads" },
+      "url": "https://hallownestapi.dev/api/v1/character/cornifer"
+    }
+  ]
+}`}
+      />
+
+      <Endpoint
+        method="GET"
+        path="/api/v1/character/{slug}"
+        description="Full payload for a single character. Enemy entries include HP, damage, geo drop, and Hunter's Journal notes."
+        example={`{
+  "slug": "crawlid",
+  "name": "Crawlid",
+  "game": "hk",
+  "kind": "enemy",
+  "role": "Tiny crawling bug",
+  "area": { "slug": "forgotten-crossroads", "name": "Forgotten Crossroads" },
+  "hp": 5,
+  "damage": 1,
+  "geoDrop": 1,
+  "hunterJournal": {
+    "notes": "Mindless creature that crawls along the ground..."
+  },
+  "summary": "..."
+}`}
+      />
+
+      <Endpoint
+        method="GET"
+        path="/api/v1/area"
+        description="Paginated list of regions and sub-areas across Hallownest and Pharloom."
+        params={[
+          { name: "game", type: "hk | silksong", desc: "Filter by game." },
+          { name: "kind", type: "region | subarea", desc: "Filter by area kind." },
+          { name: "parent", type: "slug", desc: "Slug of the parent region; useful to enumerate sub-areas." },
+          { name: "search", type: "string", desc: "Substring match on name, slug, or parent." },
+          { name: "limit", type: "number", desc: "1–100, default 20." },
+          { name: "offset", type: "number", desc: "Default 0." },
+        ]}
+        example={`{
+  "count": 53,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "slug": "greenpath",
+      "name": "Greenpath",
+      "game": "hk",
+      "kind": "region",
+      "url": "https://hallownestapi.dev/api/v1/area/greenpath"
+    }
+  ]
+}`}
+      />
+
+      <Endpoint
+        method="GET"
+        path="/api/v1/area/{slug}"
+        description="Full payload for a single area. The response inlines a sub-areas list under `subareas`."
+        example={`{
+  "slug": "greenpath",
+  "name": "Greenpath",
+  "kind": "region",
+  "connectsTo": ["forgotten-crossroads", "fog-canyon", "queens-gardens"],
+  "stagStation": "Greenpath Stag",
+  "subareas": [
+    { "slug": "lake-of-unn", "name": "Lake of Unn", "kind": "subarea" }
+  ],
+  "summary": "..."
+}`}
+      />
+
+      <Endpoint
+        method="GET"
+        path="/api/v1/charm"
+        description="Paginated list of charms — including the Fragile/Unbreakable line and Kingsoul/Void Heart."
+        params={[
+          { name: "game", type: "hk | silksong", desc: "Filter by game." },
+          { name: "notchCost", type: "0 | 1 | 2 | 3 | 4 | 5", desc: "Filter by notch cost. Void Heart is 0, Kingsoul is 5." },
+          { name: "area", type: "slug", desc: "Filter by the primary area of acquisition." },
+          { name: "merchant", type: "slug", desc: "Filter by the selling merchant's slug (e.g. salubra)." },
+          { name: "search", type: "string", desc: "Substring match on name, slug, or effect tagline." },
+          { name: "limit", type: "number", desc: "1–100, default 20." },
+          { name: "offset", type: "number", desc: "Default 0." },
+        ]}
+        example={`{
+  "count": 45,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "slug": "wayward-compass",
+      "name": "Wayward Compass",
+      "game": "hk",
+      "notchCost": 1,
+      "effect": "Reveals the Knight's location on the map.",
+      "area": { "slug": "dirtmouth", "name": "Dirtmouth" },
+      "url": "https://hallownestapi.dev/api/v1/charm/wayward-compass"
+    }
+  ]
+}`}
+      />
+
+      <Endpoint
+        method="GET"
+        path="/api/v1/charm/{slug}"
+        description="Full payload for a single charm — notch cost, effect, location, merchant, synergies, and upgrade chain."
+        example={`{
+  "slug": "fragile-strength",
+  "name": "Fragile Strength",
+  "notchCost": 3,
+  "fragile": true,
+  "effect": "Increases nail damage by 50%. Breaks on death.",
+  "cost": 600,
+  "merchant": "leg-eater",
+  "upgradesTo": "unbreakable-strength",
+  "synergies": ["quick-slash", "mark-of-pride"]
+}`}
+      />
+
+      <Endpoint
+        method="GET"
+        path="/api/v1/skill"
+        description="Paginated list of skills — movement abilities, spells, nail arts, and dream tools."
+        params={[
+          { name: "game", type: "hk | silksong", desc: "Filter by game." },
+          { name: "kind", type: "movement | spell | nail-art | dream", desc: "Filter by skill kind." },
+          { name: "search", type: "string", desc: "Substring match on name, slug, or effect." },
+          { name: "limit", type: "number", desc: "1–100, default 20." },
+          { name: "offset", type: "number", desc: "Default 0." },
+        ]}
+        example={`{
+  "count": 18,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "slug": "vengeful-spirit",
+      "name": "Vengeful Spirit",
+      "game": "hk",
+      "kind": "spell",
+      "url": "https://hallownestapi.dev/api/v1/skill/vengeful-spirit"
+    }
+  ]
+}`}
+      />
+
+      <Endpoint
+        method="GET"
+        path="/api/v1/skill/{slug}"
+        description="Full payload for a single skill. Spells expose `soulCost` and `damage`."
+        example={`{
+  "slug": "shade-soul",
+  "name": "Shade Soul",
+  "kind": "spell",
+  "soulCost": 33,
+  "damage": 30,
+  "upgradeOf": "vengeful-spirit",
+  "area": { "slug": "city-of-tears", "name": "City of Tears" }
+}`}
+        />
+      </DocsPage>
+    </>
   );
 }
 

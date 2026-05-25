@@ -1,0 +1,19 @@
+import { SkillSchema, type Skill } from "@/lib/schema";
+
+const data: Skill = SkillSchema.parse({
+  slug: "dash-slash",
+  name: "Dash Slash",
+  game: "hk",
+  kind: "nail-art",
+  effect: "Dash forward with a charged slash, dealing heavy damage.",
+  description:
+    "After charging the nail art, release while moving to dart forward with extended reach. Best of the three nail arts for closing distance.",
+  acquisition: "Taught by Nailmaster Oro in Kingdom's Edge.",
+  area: { slug: "kingdoms-edge", name: "Kingdom's Edge" },
+  summary: "Forward charging slash nail art. Taught by Oro.",
+  verified: false,
+  wikiSlug: "Dash_Slash",
+  sources: ["https://hollowknight.fandom.com/wiki/Dash_Slash"],
+});
+
+export default data;
