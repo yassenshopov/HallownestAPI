@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { DocsPage, DocsSection } from "@/components/docs-shell";
 
 export const metadata: Metadata = {
@@ -10,11 +11,18 @@ export const metadata: Metadata = {
 
 export default function LegalPage() {
   return (
-    <DocsPage
-      eyebrow="Project"
-      title="Legal & attribution"
-      description="The short version: this is a non-commercial fan project. We host facts, not assets."
-    >
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Docs", href: "/docs" },
+          { label: "Legal & attribution" },
+        ]}
+      />
+      <DocsPage
+        eyebrow="Project"
+        title="Legal & attribution"
+        description="The short version: this is a non-commercial fan project. We host facts, not assets."
+      >
       <DocsSection title="Trademarks">
         <p>
           <strong>Hollow Knight</strong>, <strong>Hollow Knight: Silksong</strong>, and{" "}
@@ -84,7 +92,8 @@ export default function LegalPage() {
           If you represent Team Cherry and want anything changed or removed, open an issue
           on GitHub or email the maintainer. We will respond promptly.
         </p>
-      </DocsSection>
-    </DocsPage>
+        </DocsSection>
+      </DocsPage>
+    </>
   );
 }

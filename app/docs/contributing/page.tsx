@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CodeBlock } from "@/components/code-block";
 import { DocsPage, DocsSection } from "@/components/docs-shell";
 
@@ -10,11 +11,18 @@ export const metadata: Metadata = {
 
 export default function ContributingPage() {
   return (
-    <DocsPage
-      eyebrow="Project"
-      title="Contributing"
-      description="Every entity is a file in git. Pull requests are the contract."
-    >
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Docs", href: "/docs" },
+          { label: "Contributing" },
+        ]}
+      />
+      <DocsPage
+        eyebrow="Project"
+        title="Contributing"
+        description="Every entity is a file in git. Pull requests are the contract."
+      >
       <DocsSection title="Anatomy of an entry">
         <p>
           Data lives in <code className="font-mono">data/&lt;type&gt;/&lt;slug&gt;.ts</code>.
@@ -66,7 +74,8 @@ export default data;`}
           decompiled <code className="font-mono">Assembly-CSharp.dll</code>). Otherwise leave it{" "}
           <code className="font-mono">false</code> — the UI shows an “unverified” badge.
         </p>
-      </DocsSection>
-    </DocsPage>
+        </DocsSection>
+      </DocsPage>
+    </>
   );
 }

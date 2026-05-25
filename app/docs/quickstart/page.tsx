@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CodeBlock } from "@/components/code-block";
 import { DocsPage, DocsSection } from "@/components/docs-shell";
 
@@ -10,11 +11,18 @@ export const metadata: Metadata = {
 
 export default function QuickstartPage() {
   return (
-    <DocsPage
-      eyebrow="Getting started"
-      title="Quickstart"
-      description="From zero to a parsed boss in three steps."
-    >
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Docs", href: "/docs" },
+          { label: "Quickstart" },
+        ]}
+      />
+      <DocsPage
+        eyebrow="Getting started"
+        title="Quickstart"
+        description="From zero to a parsed boss in three steps."
+      >
       <DocsSection title="1. Pick an endpoint">
         <p>The two endpoints you’ll use most:</p>
         <ul className="list-disc space-y-1 pl-5 text-foreground/90">
@@ -83,7 +91,8 @@ print(boss["name"], "—", boss["area"]["name"])`}
 
 const boss = BossSchema.parse(await res.json());`}
         />
-      </DocsSection>
-    </DocsPage>
+        </DocsSection>
+      </DocsPage>
+    </>
   );
 }

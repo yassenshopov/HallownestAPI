@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CodeBlock } from "@/components/code-block";
 import { DocsPage, DocsSection } from "@/components/docs-shell";
 
@@ -49,11 +50,18 @@ export const BossSchema = z.object({
 
 export default function SchemaDocsPage() {
   return (
-    <DocsPage
-      eyebrow="Reference"
-      title="Schema"
-      description="HallownestAPI is schema-first. Every entity is validated with Zod, both on import and at request time."
-    >
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Docs", href: "/docs" },
+          { label: "Schema" },
+        ]}
+      />
+      <DocsPage
+        eyebrow="Reference"
+        title="Schema"
+        description="HallownestAPI is schema-first. Every entity is validated with Zod, both on import and at request time."
+      >
       <DocsSection title="Boss">
         <p>
           The boss entity. Required fields are <code className="font-mono">slug</code>,{" "}
@@ -83,7 +91,8 @@ export default function SchemaDocsPage() {
             wiki pages, decompilation dumps, dev notes.
           </li>
         </ul>
-      </DocsSection>
-    </DocsPage>
+        </DocsSection>
+      </DocsPage>
+    </>
   );
 }
