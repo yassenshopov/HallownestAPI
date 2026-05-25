@@ -30,8 +30,11 @@ export const siteConfig = {
   locale: "en_US",
   language: "en",
   themeColor: {
-    light: "#ffffff",
-    dark: "#0a0a0f",
+    // Roughly the rendered values of `--background` in `app/globals.css` — keep
+    // these in sync so the mobile browser chrome blends into the Atmosphere
+    // backdrop instead of cutting a hard line at the top of the page.
+    light: "#f7f9fb",
+    dark: "#0b1018",
   },
   /**
    * Author / publisher labels. The project has no single individual author —

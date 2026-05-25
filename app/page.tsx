@@ -5,8 +5,8 @@ import { ArrowRight, Database, GitBranch, ScrollText, Sparkles } from "lucide-re
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HollowMark } from "@/components/hollow-mark";
 import { CodeBlock } from "@/components/code-block";
+import { HollowMark } from "@/components/hollow-mark";
 import { areas } from "@/data/areas";
 import { bosses } from "@/data/bosses";
 import { characters } from "@/data/characters";
@@ -64,10 +64,18 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: jsonLdScript(apiReferenceLd()) }}
       />
       <section className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
+        {/* Faint stone-wall grid — pulled way back so it reads as texture
+            under the global Atmosphere mist instead of competing with it. */}
         <div
           aria-hidden
-          className="absolute left-1/2 top-0 -z-10 h-96 w-[80%] -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
+          className="absolute inset-0 -z-10 bg-grid opacity-20 [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_70%)] dark:opacity-30"
+        />
+        {/* Hollow mark watermark, floating behind the headline — same trick
+            Hollow Knight uses with the giant sigils in the background of the
+            City of Tears fountain plaza. */}
+        <HollowMark
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-12 -z-10 h-64 w-64 -translate-x-1/2 text-foreground/[0.04] sm:top-16 sm:h-80 sm:w-80"
         />
 
         <div className="mx-auto max-w-6xl px-4 pb-16 pt-20 sm:px-6 lg:px-8 lg:pt-28">

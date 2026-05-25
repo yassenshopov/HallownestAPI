@@ -127,7 +127,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: jsonLdScript(websiteLd()) }}
         />
       </head>
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+      <body className="relative isolate flex min-h-full flex-col text-foreground">
         <AuthProvider>
           <ThemeProvider
             attribute="class"
@@ -136,6 +136,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
           <TooltipProvider delay={200}>
+            <Atmosphere />
             <a
               href="#main"
               className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-1.5 focus:text-sm focus:text-primary-foreground focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"

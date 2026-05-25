@@ -58,87 +58,93 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/*
+ * Palette tuned toward Hallownest: light mode reads like a bleached map of
+ * the Crossroads (warm parchment with a cool cyan kiss), dark mode leans into
+ * the City of Tears / Greenpath blue-teal void. The `--vessel` token doubles
+ * as the "soul" hue that drives motes and light beams in <Atmosphere />.
+ */
 :root {
   color-scheme: light;
-  --background: oklch(0.99 0.003 250);
-  --foreground: oklch(0.18 0.02 260);
+  --background: oklch(0.985 0.006 220);
+  --foreground: oklch(0.2 0.025 250);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 260);
+  --card-foreground: oklch(0.2 0.025 250);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 260);
-  --primary: oklch(0.55 0.13 240);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.96 0.01 250);
-  --secondary-foreground: oklch(0.22 0.02 260);
-  --muted: oklch(0.96 0.005 250);
-  --muted-foreground: oklch(0.5 0.02 260);
-  --accent: oklch(0.94 0.02 240);
-  --accent-foreground: oklch(0.22 0.02 260);
+  --popover-foreground: oklch(0.2 0.025 250);
+  --primary: oklch(0.52 0.13 220);
+  --primary-foreground: oklch(0.99 0.003 220);
+  --secondary: oklch(0.96 0.012 220);
+  --secondary-foreground: oklch(0.24 0.025 250);
+  --muted: oklch(0.965 0.008 220);
+  --muted-foreground: oklch(0.5 0.022 240);
+  --accent: oklch(0.94 0.022 220);
+  --accent-foreground: oklch(0.24 0.025 250);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.01 250);
-  --input: oklch(0.92 0.01 250);
-  --ring: oklch(0.55 0.13 240);
-  --chart-1: oklch(0.55 0.13 240);
+  --border: oklch(0.9 0.012 220);
+  --input: oklch(0.92 0.012 220);
+  --ring: oklch(0.52 0.13 220);
+  --chart-1: oklch(0.52 0.13 220);
   --chart-2: oklch(0.65 0.15 200);
   --chart-3: oklch(0.7 0.12 160);
   --chart-4: oklch(0.6 0.18 30);
   --chart-5: oklch(0.5 0.2 320);
   --radius: 0.625rem;
 
-  --vessel: oklch(0.7 0.1 220);
-  --soul: oklch(0.85 0.08 200);
+  --vessel: oklch(0.62 0.13 215);
+  --soul: oklch(0.86 0.08 210);
   --silk: oklch(0.78 0.13 30);
-  --void: oklch(0.2 0.04 280);
+  --void: oklch(0.2 0.04 270);
 
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.18 0.02 260);
-  --sidebar-primary: oklch(0.55 0.13 240);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.96 0.01 250);
-  --sidebar-accent-foreground: oklch(0.22 0.02 260);
-  --sidebar-border: oklch(0.9 0.01 250);
-  --sidebar-ring: oklch(0.55 0.13 240);
+  --sidebar: oklch(0.985 0.006 220);
+  --sidebar-foreground: oklch(0.2 0.025 250);
+  --sidebar-primary: oklch(0.52 0.13 220);
+  --sidebar-primary-foreground: oklch(0.99 0.003 220);
+  --sidebar-accent: oklch(0.96 0.012 220);
+  --sidebar-accent-foreground: oklch(0.24 0.025 250);
+  --sidebar-border: oklch(0.9 0.012 220);
+  --sidebar-ring: oklch(0.52 0.13 220);
 }
 
 .dark {
   color-scheme: dark;
-  --background: oklch(0.13 0.015 260);
-  --foreground: oklch(0.96 0.005 250);
-  --card: oklch(0.17 0.018 260);
-  --card-foreground: oklch(0.96 0.005 250);
-  --popover: oklch(0.17 0.018 260);
-  --popover-foreground: oklch(0.96 0.005 250);
-  --primary: oklch(0.78 0.12 220);
-  --primary-foreground: oklch(0.13 0.015 260);
-  --secondary: oklch(0.24 0.02 260);
-  --secondary-foreground: oklch(0.96 0.005 250);
-  --muted: oklch(0.22 0.018 260);
-  --muted-foreground: oklch(0.68 0.015 250);
-  --accent: oklch(0.26 0.025 250);
-  --accent-foreground: oklch(0.96 0.005 250);
+  --background: oklch(0.12 0.022 240);
+  --foreground: oklch(0.96 0.006 220);
+  --card: oklch(0.16 0.025 240);
+  --card-foreground: oklch(0.96 0.006 220);
+  --popover: oklch(0.16 0.025 240);
+  --popover-foreground: oklch(0.96 0.006 220);
+  --primary: oklch(0.8 0.13 210);
+  --primary-foreground: oklch(0.12 0.022 240);
+  --secondary: oklch(0.23 0.028 240);
+  --secondary-foreground: oklch(0.96 0.006 220);
+  --muted: oklch(0.21 0.025 240);
+  --muted-foreground: oklch(0.7 0.02 220);
+  --accent: oklch(0.26 0.035 230);
+  --accent-foreground: oklch(0.96 0.006 220);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.78 0.12 220);
-  --chart-1: oklch(0.78 0.12 220);
-  --chart-2: oklch(0.72 0.14 200);
+  --ring: oklch(0.8 0.13 210);
+  --chart-1: oklch(0.8 0.13 210);
+  --chart-2: oklch(0.72 0.14 195);
   --chart-3: oklch(0.75 0.13 160);
   --chart-4: oklch(0.68 0.18 30);
   --chart-5: oklch(0.6 0.22 320);
 
-  --vessel: oklch(0.78 0.12 220);
-  --soul: oklch(0.85 0.08 200);
+  --vessel: oklch(0.8 0.13 210);
+  --soul: oklch(0.9 0.08 200);
   --silk: oklch(0.78 0.13 30);
-  --void: oklch(0.12 0.03 280);
+  --void: oklch(0.08 0.035 265);
 
-  --sidebar: oklch(0.15 0.015 260);
-  --sidebar-foreground: oklch(0.96 0.005 250);
-  --sidebar-primary: oklch(0.78 0.12 220);
-  --sidebar-primary-foreground: oklch(0.13 0.015 260);
-  --sidebar-accent: oklch(0.24 0.02 260);
-  --sidebar-accent-foreground: oklch(0.96 0.005 250);
+  --sidebar: oklch(0.14 0.022 240);
+  --sidebar-foreground: oklch(0.96 0.006 220);
+  --sidebar-primary: oklch(0.8 0.13 210);
+  --sidebar-primary-foreground: oklch(0.12 0.022 240);
+  --sidebar-accent: oklch(0.23 0.028 240);
+  --sidebar-accent-foreground: oklch(0.96 0.006 220);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.78 0.12 220);
+  --sidebar-ring: oklch(0.8 0.13 210);
 }
 
 @layer base {
@@ -225,5 +231,84 @@
         transparent 1px
       );
     background-size: 48px 48px;
+  }
+
+  /*
+   * Hollow Knight "soul mote" — a single drifting dust speck that rises from
+   * below the viewport with a slight horizontal sway. Per-mote randomness
+   * (left, size, drift, duration, delay, opacity) is injected as inline style
+   * by <Atmosphere /> so each one feels organic without us having to ship
+   * one keyframe block per mote.
+   */
+  .hk-mote {
+    position: absolute;
+    bottom: -8px;
+    display: block;
+    border-radius: 9999px;
+    background: color-mix(in oklab, var(--vessel) 35%, white);
+    box-shadow:
+      0 0 6px 1px color-mix(in oklab, var(--vessel) 35%, transparent),
+      0 0 18px 3px color-mix(in oklab, var(--vessel) 15%, transparent);
+    opacity: 0;
+    animation-name: hk-mote-rise;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform, opacity;
+  }
+  .dark .hk-mote {
+    background: color-mix(in oklab, var(--vessel) 70%, white);
+    box-shadow:
+      0 0 8px 2px color-mix(in oklab, var(--vessel) 50%, transparent),
+      0 0 22px 4px color-mix(in oklab, var(--vessel) 22%, transparent);
+  }
+
+  /*
+   * Volumetric light cone falling from the top of the page — think the
+   * shafts cutting through Greenpath or the City of Tears windows.
+   */
+  .hk-light-beam {
+    background:
+      radial-gradient(
+        ellipse 60% 100% at 50% -10%,
+        color-mix(in oklab, var(--vessel) 22%, transparent),
+        transparent 70%
+      );
+  }
+
+  /*
+   * Drifting mist hugging the bottom of the viewport. Pairs with the motes,
+   * which appear to dissolve out of it.
+   */
+  .hk-mist {
+    background:
+      linear-gradient(
+        to top,
+        color-mix(in oklab, var(--vessel) 18%, transparent),
+        transparent 75%
+      );
+  }
+}
+
+@keyframes hk-mote-rise {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--mote-opacity, 0.6);
+  }
+  92% {
+    opacity: var(--mote-opacity, 0.6);
+  }
+  100% {
+    transform: translate3d(var(--mote-drift, 0px), -110vh, 0);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hk-mote {
+    animation: none;
+    opacity: 0;
   }
 }
