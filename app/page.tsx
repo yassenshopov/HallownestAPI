@@ -126,14 +126,6 @@ export default function HomePage() {
           aria-hidden
           className="absolute inset-0 -z-10 bg-grid opacity-20 [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_70%)] dark:opacity-30"
         />
-        {/* Hollow mark watermark, floating behind the headline — same trick
-            Hollow Knight uses with the giant sigils in the background of the
-            City of Tears fountain plaza. */}
-        <HollowMark
-          aria-hidden
-          className="pointer-events-none absolute left-1/2 top-12 -z-10 h-64 w-64 -translate-x-1/2 text-foreground/[0.04] sm:top-16 sm:h-80 sm:w-80"
-        />
-
         <div className="mx-auto max-w-6xl px-4 pb-16 pt-20 sm:px-6 lg:px-8 lg:pt-28">
           <div className="flex flex-col items-center text-center">
             <Badge variant="outline" className="mb-6 gap-1.5 border-primary/30 bg-primary/5 text-foreground">
