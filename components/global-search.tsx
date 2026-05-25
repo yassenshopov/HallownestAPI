@@ -218,13 +218,13 @@ export function GlobalSearch({ items }: { items: SearchItem[] }) {
   return (
     <div
       ref={containerRef}
-      className="relative mx-auto w-full max-w-2xl"
+      className="relative mx-auto w-full max-w-xl"
       role="search"
     >
       <div className="relative">
         <Search
           aria-hidden="true"
-          className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground"
+          className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
         />
         <input
           ref={inputRef}
@@ -236,7 +236,7 @@ export function GlobalSearch({ items }: { items: SearchItem[] }) {
           }}
           onFocus={() => setOpen(true)}
           onKeyDown={onInputKey}
-          placeholder="Search bosses, charms, areas, characters, skills…"
+          placeholder="Search bosses, charms, areas…"
           aria-label="Search HallownestAPI"
           aria-autocomplete="list"
           aria-expanded={open}
@@ -245,9 +245,9 @@ export function GlobalSearch({ items }: { items: SearchItem[] }) {
           autoComplete="off"
           spellCheck={false}
           enterKeyHint="go"
-          className="block h-14 w-full rounded-xl border border-border/60 bg-card/70 pl-12 pr-24 text-base shadow-sm backdrop-blur transition-colors placeholder:text-muted-foreground focus-visible:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:h-16 sm:pr-28 sm:text-lg"
+          className="block h-10 w-full rounded-lg border border-border/60 bg-card/70 pl-9 pr-3 text-sm shadow-sm backdrop-blur transition-colors placeholder:text-muted-foreground focus-visible:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:h-11 sm:pr-16 sm:text-base"
         />
-        <kbd className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 select-none items-center gap-1 rounded-md border border-border/70 bg-muted/60 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground sm:inline-flex">
+        <kbd className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 select-none items-center gap-1 rounded-md border border-border/70 bg-muted/60 px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground sm:inline-flex">
           <span aria-hidden="true">⌘</span>
           <span>K</span>
         </kbd>
@@ -303,7 +303,7 @@ export function GlobalSearch({ items }: { items: SearchItem[] }) {
                               onMouseEnter={() => setActiveIndex(flatIndex)}
                               onClick={() => setOpen(false)}
                               className={cn(
-                                "flex items-center gap-3 px-3 py-2 text-sm outline-none transition-colors",
+                                "flex items-center gap-3 px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
                                 active
                                   ? "bg-accent text-accent-foreground"
                                   : "text-foreground hover:bg-accent/60",

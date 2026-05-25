@@ -3,6 +3,7 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { HollowMark } from "@/components/hollow-mark";
+import { MobileNav } from "@/components/mobile-nav";
 import { siteConfig } from "@/lib/site-config";
 
 const nav = [
@@ -34,20 +35,20 @@ function GithubIcon({ className }: { className?: string }) {
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-14 max-w-6xl items-center gap-6 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:gap-6 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className={`flex items-center gap-2 rounded-md ${FOCUS_RING}`}
+          className={`flex min-w-0 items-center gap-2 rounded-md ${FOCUS_RING}`}
           aria-label="HallownestAPI home"
         >
-          <HollowMark className="h-6 w-6 text-primary" />
+          <HollowMark className="h-6 w-6 shrink-0 text-primary" />
           <span
-            className="font-heading font-semibold tracking-tight"
+            className="truncate font-heading font-semibold tracking-tight"
             translate="no"
           >
             HallownestAPI
           </span>
-          <span className="hidden rounded-full border border-border/70 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground sm:inline">
+          <span className="hidden shrink-0 rounded-full border border-border/70 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground sm:inline">
             v0
           </span>
         </Link>
@@ -75,6 +76,7 @@ export function SiteHeader() {
             <GithubIcon className="h-4 w-4" />
           </a>
           <ThemeToggle />
+          <MobileNav items={nav} />
         </div>
       </div>
     </header>

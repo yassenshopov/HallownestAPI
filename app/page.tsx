@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CodeBlock } from "@/components/code-block";
+import { CountUp } from "@/components/count-up";
 import { GlobalSearch, type SearchItem } from "@/components/global-search";
 import { HollowMark } from "@/components/hollow-mark";
 import { areas } from "@/data/areas";
@@ -176,26 +177,30 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="mt-12 grid w-full max-w-3xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid w-full max-w-3xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
               <StatCard
                 label="Bosses"
                 value={bosses.length}
                 sub={`${hkCount} HK · ${ssCount} Silksong`}
+                index={0}
               />
               <StatCard
                 label="Characters"
                 value={characters.length}
                 sub={`${npcCount} NPCs · ${enemyCount} enemies`}
+                index={1}
               />
               <StatCard
                 label="Areas"
                 value={areas.length}
                 sub={`${regionCount} regions · ${subareaCount} sub-areas`}
+                index={2}
               />
               <StatCard
                 label="Charms"
                 value={charms.length}
                 sub={`${skills.length} skills · ${totalEndpoints} endpoints`}
+                index={3}
               />
             </div>
           </div>
@@ -261,7 +266,7 @@ export default function HomePage() {
           <LinkCard
             href="/bosses"
             title="Browse bosses"
-            body="46 bosses, each with HP, phases, attacks, and a JSON payload."
+            body={`${bosses.length} bosses, each with HP, phases, attacks, and a JSON payload.`}
           />
           <LinkCard
             href="/characters"
@@ -276,7 +281,7 @@ export default function HomePage() {
           <LinkCard
             href="/charms"
             title="Browse charms"
-            body="All 45 charm slots — notch cost, location, synergies, and upgrades."
+            body={`All ${charms.length} charm slots — notch cost, location, synergies, and upgrades.`}
           />
           <LinkCard
             href="/skills"
@@ -328,19 +333,24 @@ function StatCard({
   label,
   value,
   sub,
+  index = 0,
 }: {
   label: string;
-  value: number | string;
+  value: number;
   sub: string;
+  /** Stagger the counter so the row reads as a wave instead of a thump. */
+  index?: number;
 }) {
   return (
     <Card className="border-border/60 bg-card/60 backdrop-blur">
       <CardHeader className="pb-1">
-        <CardTitle className="font-mono text-3xl font-semibold tracking-tight">{value}</CardTitle>
+        <CardTitle className="font-mono text-2xl font-semibold tracking-tight sm:text-3xl">
+          <CountUp value={value} delay={index * 120} />
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <p className="text-sm font-medium">{label}</p>
-        <p className="text-xs text-muted-foreground">{sub}</p>
+        <p className="truncate text-xs text-muted-foreground">{sub}</p>
       </CardContent>
     </Card>
   );
