@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "maskfly",
+  name: "Maskfly",
+  game: "hk",
+  kind: "enemy",
+  role: "Mimicking flier",
+  area: { slug: "fungal-wastes", name: "Fungal Wastes" },
+  hp: 8,
+  damage: 1,
+  geoDrop: 4,
+  hunterJournal: {
+    notes:
+      "Tiny fly wearing a husk's mask. Darts in close, fakes a strike, then jukes back out.",
+  },
+  summary:
+    "Erratic flying nuisance most common in the Fungal Wastes. Dodges before committing — a perfect target for spells.",
+  verified: false,
+  wikiSlug: "Maskfly",
+  sources: ["https://hollowknight.fandom.com/wiki/Maskfly"],
+});
+
+export default data;

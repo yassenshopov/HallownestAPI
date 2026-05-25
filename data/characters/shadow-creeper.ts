@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "shadow-creeper",
+  name: "Shadow Creeper",
+  game: "hk",
+  kind: "enemy",
+  role: "Abyssal scuttler",
+  area: { slug: "the-abyss", name: "The Abyss" },
+  hp: 8,
+  damage: 1,
+  geoDrop: 0,
+  hunterJournal: {
+    notes:
+      "Void-born scuttler. Scurries along the floor in jerks, made of the same dark stuff the Knight is.",
+  },
+  summary:
+    "Skittering void-bug in the Abyss. Harmless on its own; appears in eerie numbers around Shadow Soul gates.",
+  verified: false,
+  wikiSlug: "Shadow_Creeper",
+  sources: ["https://hollowknight.fandom.com/wiki/Shadow_Creeper"],
+});
+
+export default data;

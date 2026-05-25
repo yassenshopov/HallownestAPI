@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "squit",
+  name: "Squit",
+  game: "hk",
+  kind: "enemy",
+  role: "Mosquito swarmer",
+  area: { slug: "kingdoms-edge", name: "Kingdom's Edge" },
+  hp: 5,
+  damage: 1,
+  geoDrop: 4,
+  hunterJournal: {
+    notes:
+      "Tiny mosquito that swarms in twitchy lines. Easy to swat, easier to miss.",
+  },
+  summary:
+    "Fast, fragile mosquito spawned by Aluba and around Kingdom's Edge. One nail-swing usually clears a cluster.",
+  verified: false,
+  wikiSlug: "Squit",
+  sources: ["https://hollowknight.fandom.com/wiki/Squit"],
+});
+
+export default data;

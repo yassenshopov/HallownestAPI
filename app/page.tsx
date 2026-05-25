@@ -13,13 +13,14 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CodeBlock } from "@/components/code-block";
+import { GlobalSearch, type SearchItem } from "@/components/global-search";
 import { HollowMark } from "@/components/hollow-mark";
 import { areas } from "@/data/areas";
 import { bosses } from "@/data/bosses";
 import { characters } from "@/data/characters";
 import { charms } from "@/data/charms";
 import { skills } from "@/data/skills";
-import { type CharacterKind } from "@/lib/schema";
+import { CHARACTER_KINDS, type CharacterKind } from "@/lib/schema";
 import { apiReferenceLd, buildMetadata, jsonLdScript } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -63,6 +64,52 @@ export default function HomePage() {
   const subareaCount = areas.length - regionCount;
   // Surfaced collection types on the landing grid — keep in sync with /api/v1.
   const totalEndpoints = 11;
+
+  // Flat, serializable search index built server-side and handed to the
+  // client search component. We avoid sending full entity payloads — just
+  // the fields needed to render a row and link out.
+  const searchItems: SearchItem[] = [
+    ...bosses.map((b) => ({
+      type: "boss" as const,
+      slug: b.slug,
+      name: b.name,
+      href: `/bosses/${b.slug}`,
+      sub: b.area.name,
+      game: b.game,
+    })),
+    ...characters.map((c) => ({
+      type: "character" as const,
+      slug: c.slug,
+      name: c.name,
+      href: `/characters/${c.slug}`,
+      sub: c.role ?? CHARACTER_KINDS[c.kind].name,
+      game: c.game,
+    })),
+    ...areas.map((a) => ({
+      type: "area" as const,
+      slug: a.slug,
+      name: a.name,
+      href: `/areas/${a.slug}`,
+      sub: a.kind === "subarea" ? "Sub-area" : "Region",
+      game: a.game,
+    })),
+    ...charms.map((c) => ({
+      type: "charm" as const,
+      slug: c.slug,
+      name: c.name,
+      href: `/charms/${c.slug}`,
+      sub: c.effect,
+      game: c.game,
+    })),
+    ...skills.map((s) => ({
+      type: "skill" as const,
+      slug: s.slug,
+      name: s.name,
+      href: `/skills/${s.slug}`,
+      sub: s.effect,
+      game: s.game,
+    })),
+  ];
 
   return (
     <>
@@ -108,7 +155,15 @@ export default function HomePage() {
               non-commercial data layer for the games. Inspired by PokeAPI.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            {/* Global search — surfaces every entity (boss/character/area/
+                charm/skill) in one place. Doubles as the primary CTA on
+                landing because most folks arrive looking for one specific
+                thing. ⌘K focuses it from anywhere. */}
+            <div className="mt-8 w-full">
+              <GlobalSearch items={searchItems} />
+            </div>
+
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link href="/docs" className={buttonVariants({ size: "lg" })}>
                 Read the docs{" "}
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />

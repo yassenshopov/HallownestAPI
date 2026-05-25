@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "stalking-devout",
+  name: "Stalking Devout",
+  game: "hk",
+  kind: "enemy",
+  role: "Mantis Village ambusher",
+  area: { slug: "deepnest", name: "Deepnest" },
+  hp: 60,
+  damage: 2,
+  geoDrop: 36,
+  hunterJournal: {
+    notes:
+      "Spider-like mantis predator that pads on the ceiling, drops on the Knight, and lashes out with curved nails.",
+  },
+  summary:
+    "Mantis tribe outcast that hunts in Deepnest. Stealthy ceiling approach, two-hit nail flurry on landing.",
+  verified: false,
+  wikiSlug: "Stalking_Devout",
+  sources: ["https://hollowknight.fandom.com/wiki/Stalking_Devout"],
+});
+
+export default data;

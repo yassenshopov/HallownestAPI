@@ -1,0 +1,21 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "emilitia",
+  name: "Emilitia",
+  game: "hk",
+  kind: "npc",
+  role: "Pleasure House socialite",
+  area: { slug: "pleasure-house", name: "Pleasure House" },
+  location:
+    "In her private chamber inside the Pleasure House (Simple Key required).",
+  summary:
+    "Wealthy, dismissive bug who hosts herself a one-bug party long after the city emptied.",
+  description:
+    "Looks down on visitors and pretends nothing has changed. The Dream Nail tells a different story — one of loneliness and the friends she has long since outlived.",
+  verified: false,
+  wikiSlug: "Emilitia",
+  sources: ["https://hollowknight.fandom.com/wiki/Emilitia"],
+});
+
+export default data;

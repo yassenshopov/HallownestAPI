@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "moss-knight",
+  name: "Moss Knight",
+  game: "hk",
+  kind: "enemy",
+  role: "Greenpath defender",
+  area: { slug: "greenpath", name: "Greenpath" },
+  hp: 30,
+  damage: 1,
+  geoDrop: 20,
+  hunterJournal: {
+    notes:
+      "Armoured mossbug knight. Plods forward and unleashes a wide horizontal sword sweep at close range.",
+  },
+  summary:
+    "The first true sword-and-shield enemy. Common throughout Greenpath. Block-armoured front, open back on the swing.",
+  verified: false,
+  wikiSlug: "Moss_Knight",
+  sources: ["https://hollowknight.fandom.com/wiki/Moss_Knight"],
+});
+
+export default data;

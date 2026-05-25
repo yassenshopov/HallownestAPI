@@ -105,8 +105,9 @@ HallownestAPI does not host these images.
 - **46 bosses** indexed, covering the full Hollow Knight roster
   (base game, Dream Warriors / Variants, Hidden Dreams, Grimm Troupe, Lifeblood,
   Godmaster Pantheons).
-- **28 characters** — NPCs, merchants, dream warriors, and Hunter's Journal
-  enemies. New entries are easy PRs.
+- **90 characters** — NPCs, merchants, dream warriors, and Hunter's Journal
+  enemies (Dreamers, Nailmasters, Grimm Troupe, City of Tears sentries,
+  Crystal Peak miners, and friends). New entries are easy PRs.
 - **53 areas** — every Hollow Knight region plus their named sub-areas
   (Ancestral Mound, Soul Sanctum, Mantis Village, Path of Pain, Pantheons, …)
   with a connection graph between them.

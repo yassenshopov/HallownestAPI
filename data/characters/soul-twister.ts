@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "soul-twister",
+  name: "Soul Twister",
+  game: "hk",
+  kind: "enemy",
+  role: "Soul Sanctum researcher",
+  area: { slug: "soul-sanctum", name: "Soul Sanctum" },
+  hp: 50,
+  damage: 1,
+  geoDrop: 35,
+  hunterJournal: {
+    notes:
+      "Robed Soul Sanctum scholar. Teleports between two positions and fires the Soul Master's signature orb in between.",
+  },
+  summary:
+    "Floating Sanctum caster. Phases in, fires a glowing orb, phases out before the strike connects. Pre-empt with spells.",
+  verified: false,
+  wikiSlug: "Soul_Twister",
+  sources: ["https://hollowknight.fandom.com/wiki/Soul_Twister"],
+});
+
+export default data;

@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "mossfly",
+  name: "Mossfly",
+  game: "hk",
+  kind: "enemy",
+  role: "Greenpath gnat",
+  area: { slug: "greenpath", name: "Greenpath" },
+  hp: 5,
+  damage: 1,
+  geoDrop: 2,
+  hunterJournal: {
+    notes:
+      "Tiny flier that lazily drifts across rooms. Bursts into a small cloud of spores on death.",
+  },
+  summary:
+    "Slow-floating Greenpath bug. Drops in clumps and rarely poses a threat past the first hour.",
+  verified: false,
+  wikiSlug: "Mossfly",
+  sources: ["https://hollowknight.fandom.com/wiki/Mossfly"],
+});
+
+export default data;

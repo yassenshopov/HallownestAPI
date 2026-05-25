@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "uoma",
+  name: "Uoma",
+  game: "hk",
+  kind: "enemy",
+  role: "Fog Canyon drifter",
+  area: { slug: "fog-canyon", name: "Fog Canyon" },
+  hp: 5,
+  damage: 1,
+  geoDrop: 4,
+  hunterJournal: {
+    notes:
+      "Small jellyfish-bug that drifts in straight lines through the fog. Pops harmlessly into mist when struck.",
+  },
+  summary:
+    "Lesser cousin of the Ooma. Floats lazily across rooms and dies in one strike.",
+  verified: false,
+  wikiSlug: "Uoma",
+  sources: ["https://hollowknight.fandom.com/wiki/Uoma"],
+});
+
+export default data;

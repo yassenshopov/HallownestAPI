@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "mawlurk",
+  name: "Mawlurk",
+  game: "hk",
+  kind: "enemy",
+  role: "Acid spitter",
+  area: { slug: "royal-waterways", name: "Royal Waterways" },
+  hp: 50,
+  damage: 1,
+  geoDrop: 6,
+  hunterJournal: {
+    notes:
+      "Burrows into walls and ceilings with only its sneering face exposed. Spits a stream of acid in a forward arc.",
+  },
+  summary:
+    "Wall-mounted spitter found around the waterways and edges of Greenpath. Patient, ranged, and always inconveniently placed.",
+  verified: false,
+  wikiSlug: "Mawlurk",
+  sources: ["https://hollowknight.fandom.com/wiki/Mawlurk"],
+});
+
+export default data;

@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "mantis-traitor",
+  name: "Mantis Traitor",
+  game: "hk",
+  kind: "enemy",
+  role: "Exiled Mantis warrior",
+  area: { slug: "queens-gardens", name: "Queen's Gardens" },
+  hp: 75,
+  damage: 2,
+  geoDrop: 38,
+  hunterJournal: {
+    notes:
+      "Mantis exile twisted by allegiance to the Traitor Lord. Faster, more aggressive than their kin in the Village.",
+  },
+  summary:
+    "Hostile mantis encountered throughout the Queen's Gardens. Sweep, jump-strike, and dash combos punish hesitation.",
+  verified: false,
+  wikiSlug: "Mantis_Traitor",
+  sources: ["https://hollowknight.fandom.com/wiki/Mantis_Traitor"],
+});
+
+export default data;

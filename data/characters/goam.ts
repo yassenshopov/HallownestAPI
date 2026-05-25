@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "goam",
+  name: "Goam",
+  game: "hk",
+  kind: "enemy",
+  role: "Spike-pulse trap",
+  area: { slug: "forgotten-crossroads", name: "Forgotten Crossroads" },
+  hp: 1,
+  damage: 1,
+  geoDrop: 0,
+  hunterJournal: {
+    notes:
+      "Stationary growth. Extends a long spike on a steady rhythm; collapses back down between beats.",
+  },
+  summary:
+    "Floor- and ceiling-mounted pulsing spike. Not really an enemy so much as a metronome the level forces the Knight to dance to.",
+  verified: false,
+  wikiSlug: "Goam",
+  sources: ["https://hollowknight.fandom.com/wiki/Goam"],
+});
+
+export default data;

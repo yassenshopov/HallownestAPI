@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "ooma",
+  name: "Ooma",
+  game: "hk",
+  kind: "enemy",
+  role: "Fog Canyon detonator",
+  area: { slug: "fog-canyon", name: "Fog Canyon" },
+  hp: 35,
+  damage: 1,
+  geoDrop: 8,
+  hunterJournal: {
+    notes:
+      "Hangs from the canyon ceiling, swollen with acid. Drops, swells, and explodes into a stinging cloud on contact.",
+  },
+  summary:
+    "Suspended Fog Canyon jelly that detonates when disturbed. Best burst from below with a charged spell.",
+  verified: false,
+  wikiSlug: "Ooma",
+  sources: ["https://hollowknight.fandom.com/wiki/Ooma"],
+});
+
+export default data;

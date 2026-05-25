@@ -1,0 +1,23 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "nailmaster-mato",
+  name: "Nailmaster Mato",
+  game: "hk",
+  kind: "merchant",
+  role: "Nailmaster",
+  area: { slug: "howling-cliffs", name: "Howling Cliffs" },
+  location: "His hut on the western edge of the Howling Cliffs.",
+  isBoss: true,
+  bossSlug: "brothers-oro-and-mato",
+  sells: ["Cyclone Slash nail art (800 geo)"],
+  summary:
+    "Cheerful, disciplined master of the Cyclone Slash. The most welcoming of the three Nailmasters.",
+  description:
+    "Trained alongside Oro and Sheo under Great Nailsage Sly. Faces the Knight as one half of Brothers Oro & Mato in the Pantheon of the Sage.",
+  verified: false,
+  wikiSlug: "Nailmaster_Mato",
+  sources: ["https://hollowknight.fandom.com/wiki/Nailmaster_Mato"],
+});
+
+export default data;

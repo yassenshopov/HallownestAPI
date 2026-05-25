@@ -1,0 +1,24 @@
+import { CharacterSchema, type Character } from "@/lib/schema";
+
+const data: Character = CharacterSchema.parse({
+  slug: "dirtcarver",
+  name: "Dirtcarver",
+  game: "hk",
+  kind: "enemy",
+  role: "Deepnest stalker",
+  area: { slug: "deepnest", name: "Deepnest" },
+  hp: 35,
+  damage: 1,
+  geoDrop: 16,
+  hunterJournal: {
+    notes:
+      "Eyeless burrower that scuttles along Deepnest's tunnels. Dashes forward with its scything mandibles.",
+  },
+  summary:
+    "Quick centipede-bug of Deepnest. Charges in straight lines and bounces off walls until it runs out of momentum.",
+  verified: false,
+  wikiSlug: "Dirtcarver",
+  sources: ["https://hollowknight.fandom.com/wiki/Dirtcarver"],
+});
+
+export default data;
