@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
+import { WikiImage } from "@/components/wiki-image";
 import { GAMES } from "@/lib/schema";
 import { bosses } from "@/lib/data";
 
@@ -25,7 +25,9 @@ export default function BossesPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Bosses</h1>
+        <h1 className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
+          Bosses
+        </h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">
           Every boss currently indexed. Click one to see the full payload, or hit{" "}
           <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-sm">
@@ -41,7 +43,7 @@ export default function BossesPage() {
         return (
           <section key={game} className="mb-12">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-xl font-semibold tracking-tight">
+              <h2 className="font-heading text-xl font-semibold tracking-tight">
                 {GAMES[game].name}
               </h2>
               <Badge variant="secondary" className="font-mono text-xs">
@@ -58,7 +60,7 @@ export default function BossesPage() {
                   >
                     <div className="relative aspect-[16/10] overflow-hidden bg-muted/40">
                       {boss.image?.url ? (
-                        <Image
+                        <WikiImage
                           src={boss.image.url}
                           alt={`Artwork of ${boss.name} from the Hollow Knight Wiki`}
                           fill
@@ -78,7 +80,7 @@ export default function BossesPage() {
 
                     <div className="space-y-3 p-4">
                       <div className="flex items-start justify-between gap-2">
-                        <h3 className="text-lg font-semibold tracking-tight">
+                        <h3 className="font-heading text-lg font-semibold tracking-tight">
                           {boss.name}
                         </h3>
                         <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />

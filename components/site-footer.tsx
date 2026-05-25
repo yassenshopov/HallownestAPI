@@ -17,7 +17,10 @@ export function SiteFooter() {
             aria-label="HallownestAPI home"
           >
             <HollowMark className="h-5 w-5 text-primary" />
-            <span className="font-semibold tracking-tight" translate="no">
+            <span
+              className="font-heading font-semibold tracking-tight"
+              translate="no"
+            >
               HallownestAPI
             </span>
           </Link>
@@ -93,7 +96,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-foreground">
+      <h3 className="mb-3 font-heading text-xs font-semibold uppercase tracking-wider text-foreground">
         {title}
       </h3>
       <ul className="space-y-2 text-sm">

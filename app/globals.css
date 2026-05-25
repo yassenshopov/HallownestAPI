@@ -14,7 +14,7 @@
     "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular,
     "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --font-heading:
-    "Geist", "Geist Fallback", ui-sans-serif, system-ui, -apple-system,
+    "Outfit", "Outfit Fallback", ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -164,6 +164,42 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * View Transitions API — circular clip-path reveal for the theme toggle.
+ *
+ * The animation itself is driven from JS via Element.animate() because the
+ * origin point and radius are per-click. Here we just disable the default
+ * cross-fade and stack the new layer on top, then keep the toggle button
+ * anchored above both snapshots so the reveal feels rooted to it.
+ *
+ * Browsers without the API (Firefox today, Safari < 18) ignore these rules,
+ * and the JS path falls back to an instant theme swap.
+ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 0;
+}
+::view-transition-new(root) {
+  z-index: 1;
+}
+[data-theme-toggle] {
+  view-transition-name: theme-toggle;
+}
+::view-transition-group(theme-toggle) {
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
   }
 }
 

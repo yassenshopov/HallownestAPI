@@ -43,7 +43,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           <nav aria-label="Docs" className="space-y-6 text-sm">
             {sections.map((sec) => (
               <div key={sec.title}>
-                <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <h4 className="mb-2 font-heading text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   {sec.title}
                 </h4>
                 <ul className="space-y-1">

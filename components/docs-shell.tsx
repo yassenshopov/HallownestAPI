@@ -23,7 +23,7 @@ export function DocsPage({
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h1 className="text-balance font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
           {title}
         </h1>
         {description ? (
@@ -48,7 +48,7 @@ export function DocsSection({
 }) {
   return (
     <section id={id} className="space-y-3">
-      <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="font-heading text-xl font-semibold tracking-tight">{title}</h2>
       <div className="space-y-3">{children}</div>
     </section>
   );

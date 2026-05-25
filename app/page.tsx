@@ -50,7 +50,7 @@ export default function HomePage() {
               <span className="text-xs">v0&nbsp;·&nbsp;early preview</span>
             </Badge>
 
-            <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-3xl text-balance font-heading text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
               An open API for{" "}
               <span
                 className="bg-gradient-to-br from-primary to-foreground/70 bg-clip-text text-transparent"
@@ -94,7 +94,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid items-start gap-8 lg:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
               One <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-base">fetch</code> away from
               every boss.
             </h2>
@@ -126,7 +126,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
               Start here
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
@@ -163,7 +163,7 @@ export default function HomePage() {
       <section className="border-t border-border/60 bg-muted/30">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-16 text-center sm:px-6 lg:px-8">
           <HollowMark className="h-10 w-10 text-primary" />
-          <h2 className="max-w-2xl text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="max-w-2xl text-balance font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
             A community project, made by and for the people who love these games.
           </h2>
           <p className="max-w-2xl text-balance text-muted-foreground">
@@ -235,7 +235,7 @@ function LinkCard({
       className="group block rounded-lg border border-border/60 bg-card/60 p-5 transition-colors hover:border-primary/40 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       <div className="flex items-center justify-between gap-2">
-        <h3 className="font-medium tracking-tight">{title}</h3>
+        <h3 className="font-heading font-medium tracking-tight">{title}</h3>
         <ArrowRight
           aria-hidden="true"
           className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"

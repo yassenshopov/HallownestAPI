@@ -37,7 +37,10 @@ export function SiteHeader() {
           aria-label="HallownestAPI home"
         >
           <HollowMark className="h-6 w-6 text-primary" />
-          <span className="font-semibold tracking-tight" translate="no">
+          <span
+            className="font-heading font-semibold tracking-tight"
+            translate="no"
+          >
             HallownestAPI
           </span>
           <span className="hidden rounded-full border border-border/70 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground sm:inline">

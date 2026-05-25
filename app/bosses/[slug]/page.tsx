@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
@@ -8,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { CodeBlock } from "@/components/code-block";
+import { WikiImage } from "@/components/wiki-image";
 import { bosses } from "@/data/bosses";
 import { getBoss } from "@/lib/data";
 import { GAMES } from "@/lib/schema";
@@ -76,7 +76,7 @@ export default async function BossPage({
               </Badge>
             ) : null}
           </div>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance">
+          <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-balance">
             {boss.name}
           </h1>
           <p className="mt-3 max-w-2xl text-balance text-muted-foreground">
@@ -87,7 +87,7 @@ export default async function BossPage({
         {boss.image?.url ? (
           <figure className="sm:w-64">
             <div className="relative aspect-square overflow-hidden rounded-lg border border-border/60 bg-muted/30">
-              <Image
+              <WikiImage
                 src={boss.image.url}
                 alt={`Artwork of ${boss.name} from the Hollow Knight Wiki`}
                 fill
@@ -109,7 +109,9 @@ export default async function BossPage({
           {boss.phases?.length ? (
             <Card className="border-border/60">
               <CardHeader>
-                <h2 className="text-base font-semibold tracking-tight">Phases</h2>
+                <h2 className="font-heading text-base font-semibold tracking-tight">
+                  Phases
+                </h2>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ol className="space-y-4">
@@ -119,7 +121,7 @@ export default async function BossPage({
                         <span className="font-mono text-xs text-muted-foreground tabular-nums">
                           {i + 1}.
                         </span>
-                        <h3 className="font-medium">{p.name}</h3>
+                        <h3 className="font-heading font-medium">{p.name}</h3>
                       </div>
                       {p.description ? (
                         <p className="mt-1 pl-6 text-sm text-muted-foreground">
@@ -136,7 +138,9 @@ export default async function BossPage({
           {boss.attacks?.length ? (
             <Card className="border-border/60">
               <CardHeader>
-                <h2 className="text-base font-semibold tracking-tight">Attacks</h2>
+                <h2 className="font-heading text-base font-semibold tracking-tight">
+                  Attacks
+                </h2>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
@@ -163,7 +167,7 @@ export default async function BossPage({
           {boss.hunterJournal?.notes ? (
             <Card className="border-border/60">
               <CardHeader>
-                <h2 className="text-base font-semibold tracking-tight">
+                <h2 className="font-heading text-base font-semibold tracking-tight">
                   Hunter’s notes
                 </h2>
               </CardHeader>
