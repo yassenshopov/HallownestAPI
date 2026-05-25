@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Database, GitBranch, ScrollText, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  Coffee,
+  Database,
+  GitBranch,
+  ScrollText,
+  Sparkles,
+} from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -14,6 +21,7 @@ import { charms } from "@/data/charms";
 import { skills } from "@/data/skills";
 import { type CharacterKind } from "@/lib/schema";
 import { apiReferenceLd, buildMetadata, jsonLdScript } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata({
   path: "/",
@@ -243,6 +251,17 @@ export default function HomePage() {
             <Link href="/docs" className={buttonVariants()}>
               Get started
             </Link>
+            {/* Tip jar — keeps the project non-commercial while still letting
+                people who want to chip in for hosting / data curation do so. */}
+            <a
+              href={siteConfig.buyMeACoffeeUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className={buttonVariants({ variant: "ghost" })}
+            >
+              <Coffee aria-hidden="true" className="h-4 w-4" />
+              Buy me a coffee
+            </a>
           </div>
         </div>
       </section>

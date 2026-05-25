@@ -245,10 +245,16 @@
     bottom: -8px;
     display: block;
     border-radius: 9999px;
-    background: color-mix(in oklab, var(--vessel) 35%, white);
+    /*
+     * Light mode: ink-like dust speck. We mix the teal `--vessel` toward
+     * `--foreground` (a near-black) so the dot reads clearly against the
+     * pale parchment bg — closer to the floating particles in the Abyss
+     * than the soft glowing souls of City of Tears.
+     */
+    background: color-mix(in oklab, var(--vessel) 35%, var(--foreground));
     box-shadow:
-      0 0 6px 1px color-mix(in oklab, var(--vessel) 35%, transparent),
-      0 0 18px 3px color-mix(in oklab, var(--vessel) 15%, transparent);
+      0 0 4px 0.5px color-mix(in oklab, var(--vessel) 40%, transparent),
+      0 0 12px 2px color-mix(in oklab, var(--vessel) 18%, transparent);
     opacity: 0;
     animation-name: hk-mote-rise;
     animation-timing-function: linear;
@@ -256,6 +262,7 @@
     will-change: transform, opacity;
   }
   .dark .hk-mote {
+    /* Dark mode: glowing soul wisp — bright cyan core with a generous halo. */
     background: color-mix(in oklab, var(--vessel) 70%, white);
     box-shadow:
       0 0 8px 2px color-mix(in oklab, var(--vessel) 50%, transparent),
