@@ -15,6 +15,7 @@ const data: Boss = BossSchema.parse({
     { name: "Focused descend" },
   ],
   rewards: ["Path to Absolute Radiance"],
+  music: { title: "Pure Vessel", spotifyTrackId: "5nvuhLgk7hWf7UleWLtAd2" },
   summary:
     "The Hollow Knight as it was meant to be: silent, perfect, unbroken. The fifth Pantheon's final fight. Tighter timings and no infection animations to telegraph attacks.",
   verified: false,

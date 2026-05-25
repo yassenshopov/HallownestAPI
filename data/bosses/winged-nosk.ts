@@ -13,6 +13,7 @@ const data: Boss = BossSchema.parse({
     { name: "Hanging ambush" },
     { name: "Doppelgänger drop" },
   ],
+  music: { title: "Nosk", spotifyTrackId: "77vkOcahVHbBpF4tdjerSW" },
   summary:
     "A Godhome-only variant of Nosk that hangs from the ceiling and divebombs from above. Only fightable inside the Hall of Gods or the higher Pantheons.",
   verified: false,

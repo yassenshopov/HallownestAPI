@@ -30,6 +30,7 @@ const data: Boss = BossSchema.parse({
     notes:
       "A self-styled knight guarding the entrance to the Crossroads. Wields a stolen mace far larger than itself.",
   },
+  music: { title: "False Knight", spotifyTrackId: "3hG05dRDVtY1COn47oKDT4" },
   summary:
     "First major boss of Hollow Knight. Guards the way deeper into the Forgotten Crossroads. Has an armoured phase and a vulnerable maggot phase.",
   verified: false,

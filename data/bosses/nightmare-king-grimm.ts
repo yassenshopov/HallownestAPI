@@ -15,6 +15,7 @@ const data: Boss = BossSchema.parse({
     { name: "Death balloon" },
   ],
   rewards: ["Hunter's Journal entry", "Carefree Melody charm (via Banishment instead)"],
+  music: { title: "Nightmare King", spotifyTrackId: "5WtoiziTiOpTgQTQRpbXCa" },
   summary:
     "Final boss of the Grimm Troupe DLC. A faster, deadlier echo of the Troupe Master with new crow-dive and balloon phases. Considered one of the hardest fights in the game.",
   verified: false,

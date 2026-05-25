@@ -24,6 +24,7 @@ const data: Boss = BossSchema.parse({
     notes:
       "Forged of god and void. The Vessel created to seal away the Old Light's plague — and it cracked.",
   },
+  music: { title: "Sealed Vessel", spotifyTrackId: "5LlqVViilxn216dQzcFyvy" },
   summary:
     "The default final boss. Slow telegraphs, three escalating phases, and an emotional gut-punch as the Vessel begins striking itself to release the Infection.",
   verified: false,

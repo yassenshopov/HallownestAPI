@@ -14,6 +14,7 @@ const data: Boss = BossSchema.parse({
     { name: "Zoteling rain" },
   ],
   rewards: ["Essence (300, scales with repeats)"],
+  music: { title: "Dream Battle", spotifyTrackId: "4TbcrjhOwuTAWBplSuOAz2" },
   summary:
     "Bretta's dream version of Zote, the love of her life rendered as an unstoppable champion. Reachable via Bretta's house in Dirtmouth after the Colosseum.",
   verified: false,

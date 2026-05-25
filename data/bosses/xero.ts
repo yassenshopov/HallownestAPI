@@ -12,6 +12,7 @@ const data: Boss = BossSchema.parse({
     { name: "Floating nails", description: "Six homing nails that orbit and dive." },
   ],
   rewards: ["Essence (100)"],
+  music: { title: "Dream", spotifyTrackId: "2hw0t9gmMhNCm16WlfU3xK" },
   summary:
     "A Dream Warrior fought in the Resting Grounds graveyard. The whole fight is about reading the orbits of six homing nails while staying mobile.",
   verified: false,

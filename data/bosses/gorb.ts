@@ -13,6 +13,7 @@ const data: Boss = BossSchema.parse({
     { name: "Targeted spear" },
   ],
   rewards: ["Essence (100)"],
+  music: { title: "Dream", spotifyTrackId: "2hw0t9gmMhNCm16WlfU3xK" },
   summary:
     "A floating, self-styled deity from the Howling Cliffs. The easiest of the seven Dream Warriors. Stays stationary while telegraphing geometric attack patterns.",
   verified: false,

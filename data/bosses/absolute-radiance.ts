@@ -21,6 +21,7 @@ const data: Boss = BossSchema.parse({
     { name: "Sun beam" },
   ],
   rewards: ["Embrace the Void ending"],
+  music: { title: "Radiance", spotifyTrackId: "1ygjvLVwydBF164HQsv2QD" },
   summary:
     "The hardest fight in Hollow Knight. The Radiance at full power, locked behind the Pantheon of Hallownest. Pure rhythm and pattern memorisation.",
   verified: false,

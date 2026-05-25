@@ -17,6 +17,7 @@ const data: Boss = BossSchema.parse({
     { name: "Pogo throw" },
     { name: "Triple counter pose" },
   ],
+  music: { title: "Sisters of Battle", spotifyTrackId: "6yZJigvD7SCYOp7tL8AtuB" },
   summary:
     "The Godhome ascended form of the Mantis Lords. All three sisters attack at once with no pacing breaks, with new dive patterns layered on top of the base fight.",
   verified: false,

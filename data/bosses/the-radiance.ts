@@ -25,6 +25,7 @@ const data: Boss = BossSchema.parse({
     notes:
       "The Old Light, once kin and progenitor of moths. Its dream lashed out and seeded the plague.",
   },
+  music: { title: "Radiance", spotifyTrackId: "1ygjvLVwydBF164HQsv2QD" },
   summary:
     "The true final boss, reached via the Awoken Dream Nail inside the Hollow Knight fight. Long, vertical, and brutal — Hornet's binding shows up mid-fight.",
   verified: false,

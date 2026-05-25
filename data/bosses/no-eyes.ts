@@ -13,6 +13,7 @@ const data: Boss = BossSchema.parse({
     { name: "Spirit swarm" },
   ],
   rewards: ["Essence (200)"],
+  music: { title: "Dream", spotifyTrackId: "2hw0t9gmMhNCm16WlfU3xK" },
   summary:
     "A blinded, grieving Dream Warrior at the Stone Sanctuary in Greenpath. Stationary, but the swarms of spirits fill the arena quickly.",
   verified: false,

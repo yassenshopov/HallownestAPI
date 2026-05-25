@@ -18,6 +18,7 @@ const data: Boss = BossSchema.parse({
     { name: "Teleport" },
   ],
   rewards: ["Desolate Dive spell"],
+  music: { title: "Soul Sanctum", spotifyTrackId: "3cKzY51GRiJngSVOnOfjgl" },
   summary:
     "Head of the Soul Sanctum. A two-phase fight that rewards the Desolate Dive spell. Once finished, his soul lingers and can be challenged again as Soul Tyrant.",
   verified: false,

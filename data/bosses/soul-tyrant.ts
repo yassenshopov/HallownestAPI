@@ -18,6 +18,7 @@ const data: Boss = BossSchema.parse({
     { name: "Teleport pursuit" },
   ],
   rewards: ["Essence (400)"],
+  music: { title: "Dream Battle", spotifyTrackId: "4TbcrjhOwuTAWBplSuOAz2" },
   summary:
     "Dream variant of the Soul Master, fought in the same arena. Both phases are faster and orb patterns are denser.",
   verified: false,

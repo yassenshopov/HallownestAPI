@@ -13,6 +13,7 @@ const data: Boss = BossSchema.parse({
     { name: "Tremor", description: "Slams the ground to summon shockwave columns." },
   ],
   rewards: ["Essence (100)"],
+  music: { title: "Dream", spotifyTrackId: "2hw0t9gmMhNCm16WlfU3xK" },
   summary:
     "A teacher-turned-Dream-Warrior in the Resting Grounds. Predictable dash-and-slam patterns; the difficulty is keeping a steady rhythm.",
   verified: false,

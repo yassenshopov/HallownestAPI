@@ -25,6 +25,7 @@ const data: Boss = BossSchema.parse({
     notes:
       "A vigilant warrior of Hallownest, daughter of the Pale King. Protector of Hallownest's borders.",
   },
+  music: { title: "Hornet", spotifyTrackId: "4p6GbcE3GjJs7JzhVBv2uT" },
   summary:
     "The first encounter with Hornet, fought at the heart of Greenpath. A fast, aggressive duel that introduces dash and needle-throw patterns.",
   verified: false,

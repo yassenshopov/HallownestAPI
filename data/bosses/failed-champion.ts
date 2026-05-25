@@ -14,6 +14,7 @@ const data: Boss = BossSchema.parse({
     { name: "Triple jump charge" },
   ],
   rewards: ["Essence (300)"],
+  music: { title: "Dream Battle", spotifyTrackId: "4TbcrjhOwuTAWBplSuOAz2" },
   summary:
     "Dream Nail variant of the False Knight. Same moveset, much higher HP and reaction speed. Found via the False Knight's corpse.",
   verified: false,

@@ -14,6 +14,7 @@ const data: Boss = BossSchema.parse({
     { name: "Underground spike geyser" },
   ],
   rewards: ["Essence (300, then 100 per repeat)"],
+  music: { title: "White Defender", spotifyTrackId: "3y4p631gIGjjboFomRzmRg" },
   summary:
     "Dream variant of the Dung Defender, reachable via his nap spot after the fight. Adds spike geysers and rapid ball storms. Repeatable for diminishing essence.",
   verified: false,

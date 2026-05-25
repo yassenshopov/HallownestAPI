@@ -17,6 +17,7 @@ const data: Boss = BossSchema.parse({
   hunterJournal: {
     notes: "A predator that lures prey by wearing the face of those they have lost.",
   },
+  music: { title: "Nosk", spotifyTrackId: "77vkOcahVHbBpF4tdjerSW" },
   summary:
     "A horrifying shape-shifter that imitates the Knight to lure the player into a trap in Deepnest. Mostly mobile, with attacks that punish careless movement.",
   verified: false,

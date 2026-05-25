@@ -14,6 +14,7 @@ const data: Boss = BossSchema.parse({
     { name: "Orbiting shield" },
   ],
   rewards: ["Essence (250)"],
+  music: { title: "Dream", spotifyTrackId: "2hw0t9gmMhNCm16WlfU3xK" },
   summary:
     "Often considered the hardest Dream Warrior. Found at the top of Kingdom's Edge. Combines vertical platforming, spike rain, and an orbiting shield that blocks attacks.",
   verified: false,

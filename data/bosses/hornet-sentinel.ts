@@ -19,6 +19,7 @@ const data: Boss = BossSchema.parse({
     notes:
       "The protector of Hallownest's ruins makes her stand at the edge of the world. She has not weakened since Greenpath.",
   },
+  music: { title: "Daughter of Hallownest", spotifyTrackId: "3Pwmf3xVA8MV6h2isY6whx" },
   summary:
     "The second, much harder Hornet duel. Adds aerial dives and a new silk-barb attack on top of the Greenpath moveset. Granting passage to the Abyss.",
   verified: false,

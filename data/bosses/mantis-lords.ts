@@ -29,6 +29,7 @@ const data: Boss = BossSchema.parse({
     notes:
       "Three sisters ruling the Mantis Tribe. They honour challengers who prove themselves in single combat.",
   },
+  music: { title: "Mantis Lords", spotifyTrackId: "7uIyzCZKGk9K2EXnb3BtrR" },
   summary:
     "An optional but iconic fight. Defeating them earns the respect of the Mantis Tribe and unlocks passage deeper into Hallownest.",
   verified: false,

@@ -17,6 +17,7 @@ const data: Boss = BossSchema.parse({
   hunterJournal: {
     notes: "A jolly knight who insists on defending Hallownest from beneath, regardless of what crawls in or out.",
   },
+  music: { title: "Dung Defender", spotifyTrackId: "5JWnXDqHFgGJZFIZ3PZh8G" },
   summary:
     "The cheerful guardian of the Royal Waterways. Burrows through dung and pops up beneath the player, making vertical awareness critical.",
   verified: false,

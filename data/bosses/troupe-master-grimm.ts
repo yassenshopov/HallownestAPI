@@ -19,6 +19,7 @@ const data: Boss = BossSchema.parse({
     notes:
       "Master of a wandering troupe that feeds on the embers of dying kingdoms. Beautiful, courteous, and lethal.",
   },
+  music: { title: "The Grimm Troupe", spotifyTrackId: "4Jk6clW2UYpdJnwNYygcVd" },
   summary:
     "Centrepiece of the Grimm Troupe DLC. A theatrical, fire-heavy fight with sweeping cape dashes and pillar patterns. First step toward Nightmare King Grimm.",
   verified: false,

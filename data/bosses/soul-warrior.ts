@@ -13,6 +13,7 @@ const data: Boss = BossSchema.parse({
     { name: "Soul orb", description: "Conjures a homing energy orb." },
     { name: "Teleport strike" },
   ],
+  music: { title: "Soul Sanctum", spotifyTrackId: "3cKzY51GRiJngSVOnOfjgl" },
   summary:
     "An apprentice of the Soul Sanctum guarding the path to the Soul Master. Telegraphed but fast, and the first introduction to soul-based attacks.",
   verified: false,

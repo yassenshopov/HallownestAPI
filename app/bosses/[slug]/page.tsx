@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { CodeBlock } from "@/components/code-block";
-import { WikiImage } from "@/components/wiki-image";
 import { bosses } from "@/data/bosses";
 import { getBoss } from "@/lib/data";
 import { GAMES } from "@/lib/schema";
+import {
+  breadcrumbLd,
+  buildMetadata,
+  gameEntityLd,
+  jsonLdScript,
+} from "@/lib/seo";
 
 const FOCUS_RING =
   "rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
@@ -26,16 +32,31 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const boss = getBoss(slug);
-  if (!boss) return { title: "Boss not found" };
-  return {
-    title: boss.name,
-    description: boss.summary,
-    openGraph: boss.image?.url
-      ? {
-          images: [{ url: boss.image.url, alt: boss.name }],
-        }
-      : undefined,
-  };
+  if (!boss) {
+    return buildMetadata({
+      title: "Boss not found",
+      description: "This boss isn't in HallownestAPI yet.",
+      path: `/bosses/${slug}`,
+      noIndex: true,
+    });
+  }
+
+  const gameName = GAMES[boss.game].name;
+  return buildMetadata({
+    title: `${boss.name} — ${gameName} boss`,
+    description: `${boss.summary} Boss in ${boss.area.name}, ${gameName}.`,
+    path: `/bosses/${boss.slug}`,
+    type: "article",
+    ogImage: `/bosses/${boss.slug}/opengraph-image`,
+    keywords: [
+      boss.name,
+      `${boss.name} HP`,
+      `${boss.name} boss`,
+      `${boss.name} ${gameName}`,
+      `${gameName} boss guide`,
+      boss.area.name,
+    ],
+  });
 }
 
 export default async function BossPage({
@@ -49,59 +70,71 @@ export default async function BossPage({
 
   return (
     <div className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-      <Link
-        href="/bosses"
-        className={`mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground ${FOCUS_RING}`}
-      >
-        <ArrowLeft aria-hidden="true" className="h-4 w-4" /> All bosses
-      </Link>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD payload is built from a typed constant.
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(
+            breadcrumbLd([
+              { name: "Home", path: "/" },
+              { name: "Bosses", path: "/bosses" },
+              { name: boss.name, path: `/bosses/${boss.slug}` },
+            ]),
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD payload is built from a typed constant.
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(
+            gameEntityLd({
+              type: "Thing",
+              name: boss.name,
+              description: boss.summary,
+              path: `/bosses/${boss.slug}`,
+              game: boss.game,
+              image: `/bosses/${boss.slug}/opengraph-image`,
+              sameAs: [
+                ...(boss.wikiUrl ? [boss.wikiUrl] : []),
+                ...(boss.sources ?? []),
+              ],
+            }),
+          ),
+        }}
+      />
+      <Breadcrumbs
+        items={[
+          { label: "Bosses", href: "/bosses" },
+          { label: boss.name },
+        ]}
+      />
 
-      <header className="mb-8 grid gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
-        <div>
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="outline" className="text-xs">
-              {GAMES[boss.game].name}
+      <header className="mb-8">
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge variant="outline" className="text-xs">
+            {GAMES[boss.game].name}
+          </Badge>
+          {boss.optional ? (
+            <Badge variant="secondary" className="text-xs">
+              optional
             </Badge>
-            {boss.optional ? (
-              <Badge variant="secondary" className="text-xs">
-                optional
-              </Badge>
-            ) : null}
-            {!boss.verified ? (
-              <Badge
-                variant="outline"
-                className="border-amber-500/40 text-xs text-amber-600 dark:text-amber-400"
-              >
-                unverified
-              </Badge>
-            ) : null}
-          </div>
-          <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-balance">
-            {boss.name}
-          </h1>
-          <p className="mt-3 max-w-2xl text-balance text-muted-foreground">
-            {boss.summary}
-          </p>
+          ) : null}
+          {!boss.verified ? (
+            <Badge
+              variant="outline"
+              className="border-amber-500/40 text-xs text-amber-600 dark:text-amber-400"
+            >
+              unverified
+            </Badge>
+          ) : null}
         </div>
-
-        {boss.image?.url ? (
-          <figure className="sm:w-64">
-            <div className="relative aspect-square overflow-hidden rounded-lg border border-border/60 bg-muted/30">
-              <WikiImage
-                src={boss.image.url}
-                alt={`Artwork of ${boss.name} from the Hollow Knight Wiki`}
-                fill
-                sizes="(min-width: 640px) 256px, 100vw"
-                className="object-contain p-3"
-                priority
-                unoptimized
-              />
-            </div>
-            <figcaption className="mt-1.5 text-[10px] text-muted-foreground">
-              Image: {boss.image.attribution ?? "Hollow Knight Wiki"} · {boss.image.license ?? "CC BY-SA 3.0"}
-            </figcaption>
-          </figure>
-        ) : null}
+        <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-balance">
+          {boss.name}
+        </h1>
+        <p className="mt-3 max-w-2xl text-balance text-muted-foreground">
+          {boss.summary}
+        </p>
       </header>
 
       <div className="grid gap-6 lg:grid-cols-3">
@@ -175,6 +208,32 @@ export default async function BossPage({
                 <p className="text-sm italic text-muted-foreground">
                   {boss.hunterJournal.notes}
                 </p>
+              </CardContent>
+            </Card>
+          ) : null}
+
+          {boss.music ? (
+            <Card className="border-border/60">
+              <CardHeader>
+                <CardTitle className="text-base">Music</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {boss.music.spotifyTrackId ? (
+                  <iframe
+                    title={`Spotify player for "${boss.music.title}" from the Hollow Knight OST`}
+                    src={`https://open.spotify.com/embed/track/${boss.music.spotifyTrackId}?utm_source=hollowapi`}
+                    width="100%"
+                    height={152}
+                    loading="lazy"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    className="block w-full rounded-xl border-0"
+                  />
+                ) : (
+                  <p className="text-sm text-muted-foreground">
+                    <span className="text-foreground">{boss.music.title}</span>{" "}
+                    — not released as a standalone track.
+                  </p>
+                )}
               </CardContent>
             </Card>
           ) : null}

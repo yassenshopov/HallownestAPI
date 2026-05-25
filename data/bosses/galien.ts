@@ -13,6 +13,7 @@ const data: Boss = BossSchema.parse({
     { name: "Mini scythe ring" },
   ],
   rewards: ["Essence (200)"],
+  music: { title: "Dream", spotifyTrackId: "2hw0t9gmMhNCm16WlfU3xK" },
   summary:
     "A spectral reaper in a Deepnest graveyard. The signature attack is a massive scythe that loops back, forcing the player to track its path while dodging.",
   verified: false,

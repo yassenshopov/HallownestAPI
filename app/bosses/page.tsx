@@ -3,15 +3,26 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { WikiImage } from "@/components/wiki-image";
 import { GAMES } from "@/lib/schema";
 import { bosses } from "@/lib/data";
+import { buildMetadata, collectionPageLd, jsonLdScript } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Bosses",
-  description:
-    "Browse every Hollow Knight and Silksong boss currently indexed in HallownestAPI.",
-};
+const PAGE_TITLE = "Bosses";
+const PAGE_DESCRIPTION =
+  "Every Hollow Knight and Silksong boss indexed by HallownestAPI — HP, phases, attacks, rewards, and area, all returned as JSON.";
+
+export const metadata: Metadata = buildMetadata({
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  path: "/bosses",
+  keywords: [
+    "Hollow Knight bosses list",
+    "Silksong bosses",
+    "boss HP",
+    "Hollow Knight Pantheon",
+    "Hunter's Journal",
+  ],
+});
 
 const FOCUS_RING =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
@@ -24,6 +35,21 @@ export default function BossesPage() {
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD payload is built from a typed constant.
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(
+            collectionPageLd({
+              name: `${PAGE_TITLE} · HallownestAPI`,
+              description: PAGE_DESCRIPTION,
+              path: "/bosses",
+              items: bosses.map((b) => ({ slug: b.slug, name: b.name })),
+              itemBasePath: "/bosses",
+            }),
+          ),
+        }}
+      />
       <header className="mb-8">
         <h1 className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
           Bosses
@@ -58,26 +84,6 @@ export default function BossesPage() {
                     href={`/bosses/${boss.slug}`}
                     className={`group block h-full overflow-hidden rounded-lg border border-border/60 bg-card/60 transition-colors hover:border-primary/40 hover:bg-card ${FOCUS_RING}`}
                   >
-                    <div className="relative aspect-[16/10] overflow-hidden bg-muted/40">
-                      {boss.image?.url ? (
-                        <WikiImage
-                          src={boss.image.url}
-                          alt={`Artwork of ${boss.name} from the Hollow Knight Wiki`}
-                          fill
-                          sizes="(min-width: 1024px) 320px, (min-width: 768px) 50vw, 100vw"
-                          className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                          unoptimized
-                        />
-                      ) : (
-                        <div
-                          aria-hidden="true"
-                          className="absolute inset-0 grid place-items-center text-xs text-muted-foreground"
-                        >
-                          no image
-                        </div>
-                      )}
-                    </div>
-
                     <div className="space-y-3 p-4">
                       <div className="flex items-start justify-between gap-2">
                         <h3 className="font-heading text-lg font-semibold tracking-tight">

@@ -18,6 +18,7 @@ const data: Boss = BossSchema.parse({
   hunterJournal: {
     notes: "Loyal champion of the Hive. Stings with vigour even as his queen wanes.",
   },
+  music: { title: "Hive Knight", spotifyTrackId: "6WoKAnQUVf9YawsvCO6tEO" },
   summary:
     "Added by the Hidden Dreams content update. Fast and aggressive with stab-tracking attacks. Rewards the Hiveblood charm.",
   verified: false,

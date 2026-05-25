@@ -14,6 +14,7 @@ const data: Boss = BossSchema.parse({
     { name: "Aerial divebomb" },
   ],
   rewards: ["Essence (400)"],
+  music: { title: "Broken Vessel", spotifyTrackId: "7Epsqwic0O9yfbf0ll0z9w" },
   summary:
     "Dream Nail variant of the Broken Vessel. Much faster pattern with constant balloon spawns. One of the highest essence rewards in the game.",
   verified: false,

@@ -13,6 +13,7 @@ const data: Boss = BossSchema.parse({
     { name: "Flutter" },
   ],
   rewards: ["Essence (150)"],
+  music: { title: "Dream", spotifyTrackId: "2hw0t9gmMhNCm16WlfU3xK" },
   summary:
     "A small Dream Warrior in Queen's Gardens. Bouncing curl pattern is predictable but the arena is cramped, so positioning matters more than reflexes.",
   verified: false,

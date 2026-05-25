@@ -14,6 +14,7 @@ const data: Boss = BossSchema.parse({
     { name: "Triple jump" },
   ],
   rewards: ["Monarch Wings"],
+  music: { title: "Broken Vessel", spotifyTrackId: "7Epsqwic0O9yfbf0ll0z9w" },
   summary:
     "A failed sibling of the Knight, animated by the Infection. Awkward and lurching, with telegraphed slams and a final burst phase. Rewards the double jump.",
   verified: false,

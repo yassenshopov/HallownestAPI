@@ -14,6 +14,7 @@ const data: Boss = BossSchema.parse({
     { name: "Charge" },
   ],
   rewards: ["Access to White Lady (story)"],
+  music: { title: "Decisive Battle", spotifyTrackId: "0N3HxBdcDAEErIBm6aGZI9" },
   summary:
     "Leader of the Mantis Traitors who broke with the Mantis Tribe. Huge hitbox, slow telegraphs, but enormous damage. Pogoing the slam is the cleanest tell.",
   verified: false,
