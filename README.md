@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HallownestAPI
 
-## Getting Started
+> An open, structured data API for Hollow Knight and Silksong. Free, fan-made, non-commercial. Inspired by [PokeAPI](https://pokeapi.co).
 
-First, run the development server:
+This repo is both the API and its docs site, built with Next.js 16. Every entity lives as a TypeScript file in `data/`, is Zod-validated at build time, and is served as static JSON at the edge.
+
+## Stack
+
+- **Next.js 16** (App Router, Turbopack, React 19)
+- **TypeScript** + **Zod** for end-to-end schema validation
+- **Tailwind v4** + **shadcn/ui** (`new-york` style, dark by default)
+- **next-themes** for dark/light toggle
+- **Clerk** (optional — auth only activates when env vars are present)
+- **Supabase** (reserved for v3 — user accounts, saved builds)
+- **lucide-react** icons
+
+## Quickstart
 
 ```bash
+npm install
+cp .env.example .env.local   # optional — defaults work without any env vars
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:112](http://localhost:112).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Try the API:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+curl http://localhost:112/api/v1
+curl "http://localhost:112/api/v1/boss?game=hk"
+curl http://localhost:112/api/v1/boss/false-knight
+```
 
-## Learn More
+## Project layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  api/v1/                    REST endpoints (route handlers)
+  bosses/                    Browse + detail pages
+  docs/                      Docs site (sidebar + MDX-free content)
+  layout.tsx                 Root layout (theme, auth, fonts)
+  page.tsx                   Landing page
+components/
+  ui/                        shadcn/ui primitives (owned source)
+  theme-provider.tsx         next-themes wrapper
+  theme-toggle.tsx           Sun/moon button
+  site-header.tsx            Sticky nav
+  site-footer.tsx            Footer + legal note
+  hollow-mark.tsx            HK-inspired SVG mark (original art)
+  code-block.tsx             Copy-to-clipboard code block
+  docs-shell.tsx             DocsPage / DocsSection
+  auth-provider.tsx          Clerk, opt-in via env
+data/
+  bosses/                    One file per boss; default-exports a validated Boss
+lib/
+  schema.ts                  Zod schemas
+  data.ts                    In-memory query helpers (filter/paginate)
+  utils.ts                   shadcn `cn()`
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Adding a boss
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```ts
+// data/bosses/marmu.ts
+import { BossSchema, type Boss } from "@/lib/schema";
 
-## Deploy on Vercel
+const data: Boss = BossSchema.parse({
+  slug: "marmu",
+  name: "Marmu",
+  game: "hk",
+  optional: true,
+  hp: { base: 250 },
+  area: { slug: "queens-gardens", name: "Queen's Gardens" },
+  summary: "A dream warrior fought in Queen's Gardens via her dreaming grave.",
+  verified: false,
+});
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+export default data;
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Then register it in `data/bosses/index.ts`. The dev server hot-reloads. The build refuses anything that doesn't parse.
+
+## Roadmap
+
+- **v0** (now): bosses only, REST list + detail, docs.
+- **v1**: full HK coverage, Silksong coverage, OpenAPI spec, generated SDKs.
+- **v2**: areas with connection graph, charms/crests, items, GraphQL.
+- **v3**: user accounts (Supabase + Clerk), saved builds, community PR pipeline.
+
+## Legal
+
+Hollow Knight and Silksong are trademarks of [Team Cherry](https://www.teamcherry.com.au/). HallownestAPI is unaffiliated. We host facts (HP, slugs, area names) and link out to wikis for art and lore. See `[/docs/legal](http://localhost:112/docs/legal)`.
+
+## License
+
+Code: MIT. Data: CC BY-NC-SA 4.0 (attribute, non-commercial, share-alike).
