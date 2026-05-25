@@ -59,6 +59,7 @@
 }
 
 :root {
+  color-scheme: light;
   --background: oklch(0.99 0.003 250);
   --foreground: oklch(0.18 0.02 260);
   --card: oklch(1 0 0);
@@ -100,6 +101,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --background: oklch(0.13 0.015 260);
   --foreground: oklch(0.96 0.005 250);
   --card: oklch(0.17 0.018 260);
@@ -148,6 +150,20 @@
   }
   html {
     @apply font-sans;
+  }
+  :where(h1, h2, h3, h4, h5, h6) {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

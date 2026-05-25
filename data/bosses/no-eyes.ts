@@ -1,0 +1,23 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "no-eyes",
+  name: "No Eyes",
+  game: "hk",
+  optional: true,
+  hp: { base: 500 },
+  geo: 0,
+  area: { slug: "greenpath", name: "Greenpath" },
+  attacks: [
+    { name: "Wailing scream", description: "Calls spirits that drift toward the player." },
+    { name: "Spirit swarm" },
+  ],
+  rewards: ["Essence (200)"],
+  summary:
+    "A blinded, grieving Dream Warrior at the Stone Sanctuary in Greenpath. Stationary, but the swarms of spirits fill the arena quickly.",
+  verified: false,
+  wikiSlug: "No_Eyes",
+  sources: ["https://hollowknight.fandom.com/wiki/No_Eyes"],
+});
+
+export default data;

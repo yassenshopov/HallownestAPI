@@ -76,7 +76,7 @@ export default function SchemaDocsPage() {
           <li>
             <code className="font-mono">hp</code>: a record keyed by difficulty tier. <code className="font-mono">base</code> is the
             unmodified value; <code className="font-mono">attuned</code> / <code className="font-mono">ascended</code> /{" "}
-            <code className="font-mono">radiant</code> are HK&apos;s Godhome scalings.
+            <code className="font-mono">radiant</code> are HK’s Godhome scalings.
           </li>
           <li>
             <code className="font-mono">sources</code>: external URLs that justify the data —

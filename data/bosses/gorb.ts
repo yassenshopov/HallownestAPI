@@ -1,0 +1,23 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "gorb",
+  name: "Gorb",
+  game: "hk",
+  optional: true,
+  hp: { base: 350 },
+  geo: 0,
+  area: { slug: "howling-cliffs", name: "Howling Cliffs" },
+  attacks: [
+    { name: "Geometric ring", description: "Launches expanding patterns of light blades." },
+    { name: "Targeted spear" },
+  ],
+  rewards: ["Essence (100)"],
+  summary:
+    "A floating, self-styled deity from the Howling Cliffs. The easiest of the seven Dream Warriors. Stays stationary while telegraphing geometric attack patterns.",
+  verified: false,
+  wikiSlug: "Gorb",
+  sources: ["https://hollowknight.fandom.com/wiki/Gorb"],
+});
+
+export default data;

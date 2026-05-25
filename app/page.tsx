@@ -46,14 +46,17 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 pb-16 pt-20 sm:px-6 lg:px-8 lg:pt-28">
           <div className="flex flex-col items-center text-center">
             <Badge variant="outline" className="mb-6 gap-1.5 border-primary/30 bg-primary/5 text-foreground">
-              <Sparkles className="h-3 w-3 text-primary" />
-              <span className="text-xs">v0 · early preview</span>
+              <Sparkles aria-hidden="true" className="h-3 w-3 text-primary" />
+              <span className="text-xs">v0&nbsp;·&nbsp;early preview</span>
             </Badge>
 
             <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
               An open API for{" "}
-              <span className="bg-gradient-to-br from-primary to-foreground/70 bg-clip-text text-transparent">
-                Hollow Knight & Silksong
+              <span
+                className="bg-gradient-to-br from-primary to-foreground/70 bg-clip-text text-transparent"
+                translate="no"
+              >
+                Hollow Knight &amp; Silksong
               </span>
             </h1>
 
@@ -64,7 +67,8 @@ export default function HomePage() {
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link href="/docs" className={buttonVariants({ size: "lg" })}>
-                Read the docs <ArrowRight className="h-4 w-4" />
+                Read the docs{" "}
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </Link>
               <Link
                 href="/bosses"
@@ -75,7 +79,11 @@ export default function HomePage() {
             </div>
 
             <div className="mt-12 grid w-full max-w-3xl gap-4 sm:grid-cols-3">
-              <StatCard label="Bosses indexed" value={bosses.length} sub={`${hkCount} HK · ${ssCount} Silksong`} />
+              <StatCard
+                label="Bosses indexed"
+                value={bosses.length}
+                sub={`${hkCount} HK · ${ssCount} Silksong`}
+              />
               <StatCard label="Endpoints" value={2} sub="REST · v1" />
               <StatCard label="Cost" value="Free" sub="Forever, no key" />
             </div>
@@ -118,7 +126,9 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Start here</h2>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              Start here
+            </h2>
             <p className="mt-2 text-sm text-muted-foreground">
               A few jumping-off points while v0 is still small.
             </p>
@@ -127,7 +137,7 @@ export default function HomePage() {
             href="/docs"
             className={`${buttonVariants({ variant: "ghost" })} hidden sm:inline-flex`}
           >
-            All docs <ArrowRight className="h-4 w-4" />
+            All docs <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </div>
 
@@ -140,7 +150,7 @@ export default function HomePage() {
           <LinkCard
             href="/bosses"
             title="Browse bosses"
-            body="See what's currently indexed. Click any to view the raw payload."
+            body="See what’s currently indexed. Click any to view the raw payload."
           />
           <LinkCard
             href="/docs/schema"
@@ -210,15 +220,26 @@ function Feature({ icon, children }: { icon: React.ReactNode; children: React.Re
   );
 }
 
-function LinkCard({ href, title, body }: { href: string; title: string; body: string }) {
+function LinkCard({
+  href,
+  title,
+  body,
+}: {
+  href: string;
+  title: string;
+  body: string;
+}) {
   return (
     <Link
       href={href}
-      className="group block rounded-lg border border-border/60 bg-card/60 p-5 transition-colors hover:border-primary/40 hover:bg-card"
+      className="group block rounded-lg border border-border/60 bg-card/60 p-5 transition-colors hover:border-primary/40 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       <div className="flex items-center justify-between gap-2">
         <h3 className="font-medium tracking-tight">{title}</h3>
-        <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground" />
+        <ArrowRight
+          aria-hidden="true"
+          className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
+        />
       </div>
       <p className="mt-1 text-sm text-muted-foreground">{body}</p>
     </Link>

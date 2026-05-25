@@ -1,0 +1,508 @@
+{
+  "absolute-radiance": {
+    "wikiSlug": "Absolute_Radiance",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Absolute_Radiance",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/c/cb/Beta_hk_promo.png/revision/latest?cb=20190124163704",
+      "width": 640,
+      "height": 247,
+      "attribution": "Hollow Knight Wiki — Absolute Radiance",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "brooding-mawlek": {
+    "wikiSlug": "Brooding_Mawlek",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Brooding_Mawlek",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/4/42/B_Brooding_Mawlek2.png/revision/latest?cb=20180821143716",
+      "width": 322,
+      "height": 285,
+      "attribution": "Hollow Knight Wiki — Brooding Mawlek",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "broken-vessel": {
+    "wikiSlug": "Broken_Vessel",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Broken_Vessel",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/3/30/B_Broken_Vessel-2.png/revision/latest?cb=20180821144714",
+      "width": 229,
+      "height": 148,
+      "attribution": "Hollow Knight Wiki — Broken Vessel",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "brothers-oro-and-mato": {
+    "wikiSlug": "Brothers Oro & Mato",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Brothers_Oro_%26_Mato",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/c/cb/Beta_hk_promo.png/revision/latest?cb=20190124163704",
+      "width": 640,
+      "height": 247,
+      "attribution": "Hollow Knight Wiki — Brothers Oro & Mato",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "collector": {
+    "wikiSlug": "Collector",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Collector",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/d/d5/B_Collector.png/revision/latest?cb=20170412130603",
+      "width": 320,
+      "height": 287,
+      "attribution": "Hollow Knight Wiki — Collector",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "crystal-guardian": {
+    "wikiSlug": "Crystal_Guardian",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Crystal_Guardian",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/0/02/B_Crystal_Guardian.png/revision/latest?cb=20170412170806",
+      "width": 250,
+      "height": 274,
+      "attribution": "Hollow Knight Wiki — Crystal Guardian",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "dung-defender": {
+    "wikiSlug": "Dung_Defender",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Dung_Defender",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/0/0e/B_Dung_Defender.png/revision/latest?cb=20180821144213",
+      "width": 391,
+      "height": 244,
+      "attribution": "Hollow Knight Wiki — Dung Defender",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "elder-hu": {
+    "wikiSlug": "Elder_Hu",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Elder_Hu",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/0/01/HJ_Elder_Hu.png/revision/latest?cb=20170409173102",
+      "width": 287,
+      "height": 489,
+      "attribution": "Hollow Knight Wiki — Elder Hu",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "enraged-guardian": {
+    "wikiSlug": "Enraged_Guardian",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Enraged_Guardian",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/0/02/B_Crystal_Guardian.png/revision/latest?cb=20170412170806",
+      "width": 250,
+      "height": 274,
+      "attribution": "Hollow Knight Wiki — Enraged Guardian",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "failed-champion": {
+    "wikiSlug": "Failed_Champion",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Failed_Champion",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/a/ac/Failed-Champion.png/revision/latest?cb=20170422203704",
+      "width": 174,
+      "height": 262,
+      "attribution": "Hollow Knight Wiki — Failed Champion",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "false-knight": {
+    "wikiSlug": "False_Knight",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/False_Knight",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/9/98/B_False_Knight.png/revision/latest?cb=20181129012523",
+      "width": 521,
+      "height": 329,
+      "attribution": "Hollow Knight Wiki — False Knight",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "flukemarm": {
+    "wikiSlug": "Flukemarm",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Flukemarm",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/1/1b/B_Flukemarm.png/revision/latest?cb=20170412131642",
+      "width": 265,
+      "height": 446,
+      "attribution": "Hollow Knight Wiki — Flukemarm",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "galien": {
+    "wikiSlug": "Galien",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Galien",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/e/ee/HJ_Galien.png/revision/latest?cb=20170409173257",
+      "width": 289,
+      "height": 474,
+      "attribution": "Hollow Knight Wiki — Galien",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "god-tamer": {
+    "wikiSlug": "God_Tamer",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/God_Tamer",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/d/d3/B_God_Tamer.png/revision/latest?cb=20170412204109",
+      "width": 465,
+      "height": 429,
+      "attribution": "Hollow Knight Wiki — God Tamer",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "gorb": {
+    "wikiSlug": "Gorb",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Gorb",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/3/33/HJ_Gorb.png/revision/latest?cb=20170409172409",
+      "width": 275,
+      "height": 466,
+      "attribution": "Hollow Knight Wiki — Gorb",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "great-nailsage-sly": {
+    "wikiSlug": "Great_Nailsage_Sly",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Great_Nailsage_Sly",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/6/6e/Screenshot_HK_Great_Nailsage_Sly_01.png/revision/latest?cb=20200116124945",
+      "width": 1920,
+      "height": 1080,
+      "attribution": "Hollow Knight Wiki — Great Nailsage Sly",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "grey-prince-zote": {
+    "wikiSlug": "Grey_Prince_Zote",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Grey_Prince_Zote",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/7/73/Screenshot_HK_Grey_Prince_Zote_02.png/revision/latest?cb=20190225000508",
+      "width": 1920,
+      "height": 1080,
+      "attribution": "Hollow Knight Wiki — Grey Prince Zote",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "gruz-mother": {
+    "wikiSlug": "Gruz_Mother",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Gruz_Mother",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/9/9f/B_Gruz_Mother.png/revision/latest?cb=20170410171339",
+      "width": 303,
+      "height": 135,
+      "attribution": "Hollow Knight Wiki — Gruz Mother",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "hive-knight": {
+    "wikiSlug": "Hive_Knight",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Hive_Knight",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/1/19/Screenshot_HK_Hive_Knight_01.png/revision/latest?cb=20200124134449",
+      "width": 1920,
+      "height": 1080,
+      "attribution": "Hollow Knight Wiki — Hive Knight",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "hornet-protector": {
+    "wikiSlug": "Hornet_Protector",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Hornet_Protector",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/8/80/B_Hornet2.png/revision/latest?cb=20251028035041",
+      "width": 319,
+      "height": 166,
+      "attribution": "Hollow Knight Wiki — Hornet Protector",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "hornet-sentinel": {
+    "wikiSlug": "Hornet_Sentinel",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Hornet_Sentinel",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/8/80/B_Hornet2.png/revision/latest?cb=20251028035041",
+      "width": 319,
+      "height": 166,
+      "attribution": "Hollow Knight Wiki — Hornet Sentinel",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "lost-kin": {
+    "wikiSlug": "Lost_Kin",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Lost_Kin",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/9/9d/Lost-Kin.png/revision/latest?cb=20200124123329",
+      "width": 124,
+      "height": 255,
+      "attribution": "Hollow Knight Wiki — Lost Kin",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "mantis-lords": {
+    "wikiSlug": "Mantis_Lords",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Mantis_Lords",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/2/2d/B_Mantis_Lords-2.png/revision/latest?cb=20180821145144",
+      "width": 462,
+      "height": 604,
+      "attribution": "Hollow Knight Wiki — Mantis Lords",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "markoth": {
+    "wikiSlug": "Markoth",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Markoth",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/4/4a/HJ_Markoth.png/revision/latest?cb=20170409173511",
+      "width": 421,
+      "height": 491,
+      "attribution": "Hollow Knight Wiki — Markoth",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "marmu": {
+    "wikiSlug": "Marmu",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Marmu",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/2/29/HJ_Marmu.png/revision/latest?cb=20170409173602",
+      "width": 317,
+      "height": 503,
+      "attribution": "Hollow Knight Wiki — Marmu",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "massive-moss-charger": {
+    "wikiSlug": "Massive_Moss_Charger",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Massive_Moss_Charger",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/6/63/B_Massive_Moss_Charger.png/revision/latest?cb=20170411222702",
+      "width": 475,
+      "height": 289,
+      "attribution": "Hollow Knight Wiki — Massive Moss Charger",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "nightmare-king-grimm": {
+    "wikiSlug": "Nightmare_King_Grimm",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Nightmare_King_Grimm",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/9/98/Screenshot_HK_Nightmare_King_Grimm_01.png/revision/latest?cb=20200125132506",
+      "width": 1920,
+      "height": 1080,
+      "attribution": "Hollow Knight Wiki — Nightmare King Grimm",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "no-eyes": {
+    "wikiSlug": "No_Eyes",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/No_Eyes",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/5/5b/HJ_No_Eyes.png/revision/latest?cb=20170409173635",
+      "width": 374,
+      "height": 496,
+      "attribution": "Hollow Knight Wiki — No Eyes",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "nosk": {
+    "wikiSlug": "Nosk",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Nosk",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/a/a8/B_Nosk.png/revision/latest?cb=20170412183621",
+      "width": 423,
+      "height": 360,
+      "attribution": "Hollow Knight Wiki — Nosk",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "paintmaster-sheo": {
+    "wikiSlug": "Paintmaster_Sheo",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Paintmaster_Sheo",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/c/cb/Beta_hk_promo.png/revision/latest?cb=20190124163704",
+      "width": 640,
+      "height": 247,
+      "attribution": "Hollow Knight Wiki — Paintmaster Sheo",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "pure-vessel": {
+    "wikiSlug": "Pure_Vessel",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Pure_Vessel",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/c/cb/Beta_hk_promo.png/revision/latest?cb=20190124163704",
+      "width": 640,
+      "height": 247,
+      "attribution": "Hollow Knight Wiki — Pure Vessel",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "sisters-of-battle": {
+    "wikiSlug": "Sisters_of_Battle",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Sisters_of_Battle",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/c/cb/Beta_hk_promo.png/revision/latest?cb=20190124163704",
+      "width": 640,
+      "height": 247,
+      "attribution": "Hollow Knight Wiki — Sisters of Battle",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "soul-master": {
+    "wikiSlug": "Soul_Master",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Soul_Master",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/c/cf/B_Soulmaster.png/revision/latest?cb=20180821144031",
+      "width": 355,
+      "height": 311,
+      "attribution": "Hollow Knight Wiki — Soul Master",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "soul-tyrant": {
+    "wikiSlug": "Soul_Tyrant",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Soul_Tyrant",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/d/dc/Soul-Tyrant.png/revision/latest?cb=20170424170118",
+      "width": 143,
+      "height": 307,
+      "attribution": "Hollow Knight Wiki — Soul Tyrant",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "soul-warrior": {
+    "wikiSlug": "Soul_Warrior",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Soul_Warrior",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/0/0c/B_Soul_Warrior.png/revision/latest?cb=20170412095854",
+      "width": 245,
+      "height": 418,
+      "attribution": "Hollow Knight Wiki — Soul Warrior",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "the-hollow-knight": {
+    "wikiSlug": "Hollow_Knight",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Hollow_Knight",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/1/12/B_Hollow_Knight.png/revision/latest?cb=20170412204859",
+      "width": 469,
+      "height": 349,
+      "attribution": "Hollow Knight Wiki — Hollow Knight",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "the-radiance": {
+    "wikiSlug": "Radiance",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Radiance",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/5/52/B_Radiance.png/revision/latest?cb=20170412205005",
+      "width": 512,
+      "height": 545,
+      "attribution": "Hollow Knight Wiki — Radiance",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "traitor-lord": {
+    "wikiSlug": "Traitor_Lord",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Traitor_Lord",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/2/2c/B_Traitor_Lord.png/revision/latest?cb=20170412201256",
+      "width": 320,
+      "height": 444,
+      "attribution": "Hollow Knight Wiki — Traitor Lord",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "troupe-master-grimm": {
+    "wikiSlug": "Troupe_Master_Grimm",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Grimm",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/1/18/Screenshot_HK_Grimm_01.png/revision/latest?cb=20191027161020",
+      "width": 1920,
+      "height": 1080,
+      "attribution": "Hollow Knight Wiki — Grimm",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "uumuu": {
+    "wikiSlug": "Uumuu",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Uumuu",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/4/49/B_Uumuu.png/revision/latest?cb=20170412092250",
+      "width": 373,
+      "height": 466,
+      "attribution": "Hollow Knight Wiki — Uumuu",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "vengefly-king": {
+    "wikiSlug": "Vengefly_King",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Vengefly_King",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/4/41/B_Vengefly_King.png/revision/latest?cb=20170410164428",
+      "width": 291,
+      "height": 284,
+      "attribution": "Hollow Knight Wiki — Vengefly King",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "winged-nosk": {
+    "wikiSlug": "Winged_Nosk",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Winged_Nosk",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/c/cb/Beta_hk_promo.png/revision/latest?cb=20190124163704",
+      "width": 640,
+      "height": 247,
+      "attribution": "Hollow Knight Wiki — Winged Nosk",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "watcher-knights": {
+    "wikiSlug": "Watcher_Knights",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Watcher_Knight",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/9/9b/B_Watcher_Knight-2.png/revision/latest?cb=20180827012908",
+      "width": 367,
+      "height": 323,
+      "attribution": "Hollow Knight Wiki — Watcher Knight",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "white-defender": {
+    "wikiSlug": "White_Defender",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/White_Defender",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/9/9b/Screenshot_HK_White_Defender_01.png/revision/latest?cb=20220622094953",
+      "width": 1920,
+      "height": 1080,
+      "attribution": "Hollow Knight Wiki — White Defender",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "xero": {
+    "wikiSlug": "Xero",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Xero",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/f/f9/HJ_Xero.png/revision/latest?cb=20170409172918",
+      "width": 370,
+      "height": 459,
+      "attribution": "Hollow Knight Wiki — Xero",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "zote-the-mighty": {
+    "wikiSlug": "Zote_the_Mighty",
+    "wikiUrl": "https://hollowknight.fandom.com/wiki/Zote",
+    "image": {
+      "url": "https://static.wikia.nocookie.net/hollowknight/images/5/5a/Vengefly_King_Zote.png/revision/latest?cb=20200811222026",
+      "width": 228,
+      "height": 345,
+      "attribution": "Hollow Knight Wiki — Zote",
+      "license": "CC BY-SA 3.0"
+    }
+  }
+}

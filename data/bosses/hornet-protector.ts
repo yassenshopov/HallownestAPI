@@ -28,6 +28,7 @@ const data: Boss = BossSchema.parse({
   summary:
     "The first encounter with Hornet, fought at the heart of Greenpath. A fast, aggressive duel that introduces dash and needle-throw patterns.",
   verified: false,
+  wikiSlug: "Hornet_Protector",
   sources: ["https://hollowknight.fandom.com/wiki/Hornet_Protector"],
 });
 

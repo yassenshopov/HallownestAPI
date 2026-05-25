@@ -1,0 +1,29 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "troupe-master-grimm",
+  name: "Troupe Master Grimm",
+  game: "hk",
+  optional: true,
+  hp: { base: 700 },
+  geo: 0,
+  area: { slug: "dirtmouth", name: "Dirtmouth" },
+  attacks: [
+    { name: "Fire pillar" },
+    { name: "Cape dash" },
+    { name: "Fire bats" },
+    { name: "Uppercut burst" },
+  ],
+  rewards: ["Grimmchild upgrade (Banishment path)"],
+  hunterJournal: {
+    notes:
+      "Master of a wandering troupe that feeds on the embers of dying kingdoms. Beautiful, courteous, and lethal.",
+  },
+  summary:
+    "Centrepiece of the Grimm Troupe DLC. A theatrical, fire-heavy fight with sweeping cape dashes and pillar patterns. First step toward Nightmare King Grimm.",
+  verified: false,
+  wikiSlug: "Troupe_Master_Grimm",
+  sources: ["https://hollowknight.fandom.com/wiki/Troupe_Master_Grimm"],
+});
+
+export default data;

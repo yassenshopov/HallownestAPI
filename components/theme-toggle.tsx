@@ -13,17 +13,29 @@ export function ThemeToggle() {
   React.useEffect(() => setMounted(true), []);
 
   const isDark = mounted ? resolvedTheme === "dark" : true;
+  const label = mounted
+    ? isDark
+      ? "Switch to light mode"
+      : "Switch to dark mode"
+    : "Toggle theme";
 
   return (
     <Button
       variant="ghost"
       size="icon"
-      aria-label="Toggle theme"
+      aria-label={label}
+      title={label}
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="h-9 w-9"
+      className="relative h-9 w-9"
     >
-      <Sun className="h-4 w-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-      <Moon className="absolute h-4 w-4 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+      <Sun
+        aria-hidden="true"
+        className="h-4 w-4 transition-[transform,opacity] duration-200 motion-reduce:transition-none dark:scale-0 dark:-rotate-90 dark:opacity-0"
+      />
+      <Moon
+        aria-hidden="true"
+        className="absolute h-4 w-4 scale-0 rotate-90 opacity-0 transition-[transform,opacity] duration-200 motion-reduce:transition-none dark:scale-100 dark:rotate-0 dark:opacity-100"
+      />
     </Button>
   );
 }

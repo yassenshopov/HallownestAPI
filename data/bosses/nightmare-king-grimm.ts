@@ -1,0 +1,25 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "nightmare-king-grimm",
+  name: "Nightmare King Grimm",
+  game: "hk",
+  optional: true,
+  hp: { base: 1500 },
+  geo: 0,
+  area: { slug: "howling-cliffs", name: "Howling Cliffs" },
+  attacks: [
+    { name: "Fire pillar barrage" },
+    { name: "Cape dash (faster)" },
+    { name: "Crow dive" },
+    { name: "Death balloon" },
+  ],
+  rewards: ["Hunter's Journal entry", "Carefree Melody charm (via Banishment instead)"],
+  summary:
+    "Final boss of the Grimm Troupe DLC. A faster, deadlier echo of the Troupe Master with new crow-dive and balloon phases. Considered one of the hardest fights in the game.",
+  verified: false,
+  wikiSlug: "Nightmare_King_Grimm",
+  sources: ["https://hollowknight.fandom.com/wiki/Nightmare_King_Grimm"],
+});
+
+export default data;

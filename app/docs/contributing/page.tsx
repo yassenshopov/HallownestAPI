@@ -64,7 +64,7 @@ export default data;`}
           Set <code className="font-mono">verified: true</code> only if you have
           first-hand confirmation (you played the fight, or you cross-referenced the
           decompiled <code className="font-mono">Assembly-CSharp.dll</code>). Otherwise leave it{" "}
-          <code className="font-mono">false</code> — the UI shows an &quot;unverified&quot; badge.
+          <code className="font-mono">false</code> — the UI shows an “unverified” badge.
         </p>
       </DocsSection>
     </DocsPage>

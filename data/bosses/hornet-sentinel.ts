@@ -1,0 +1,29 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "hornet-sentinel",
+  name: "Hornet Sentinel",
+  game: "hk",
+  optional: false,
+  hp: { base: 700 },
+  geo: 0,
+  area: { slug: "kingdoms-edge", name: "Kingdom's Edge" },
+  attacks: [
+    { name: "Needle throw" },
+    { name: "Triple dash" },
+    { name: "Silk barb storm" },
+    { name: "Aerial dive" },
+  ],
+  rewards: ["King's Brand"],
+  hunterJournal: {
+    notes:
+      "The protector of Hallownest's ruins makes her stand at the edge of the world. She has not weakened since Greenpath.",
+  },
+  summary:
+    "The second, much harder Hornet duel. Adds aerial dives and a new silk-barb attack on top of the Greenpath moveset. Granting passage to the Abyss.",
+  verified: false,
+  wikiSlug: "Hornet_Sentinel",
+  sources: ["https://hollowknight.fandom.com/wiki/Hornet_Sentinel"],
+});
+
+export default data;

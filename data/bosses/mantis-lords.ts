@@ -32,6 +32,7 @@ const data: Boss = BossSchema.parse({
   summary:
     "An optional but iconic fight. Defeating them earns the respect of the Mantis Tribe and unlocks passage deeper into Hallownest.",
   verified: false,
+  wikiSlug: "Mantis_Lords",
   sources: ["https://hollowknight.fandom.com/wiki/Mantis_Lords"],
 });
 

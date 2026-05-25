@@ -1,0 +1,24 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "traitor-lord",
+  name: "Traitor Lord",
+  game: "hk",
+  optional: false,
+  hp: { base: 500 },
+  geo: 0,
+  area: { slug: "queens-gardens", name: "Queen's Gardens" },
+  attacks: [
+    { name: "Wide slash" },
+    { name: "Pogo-able overhead slam" },
+    { name: "Charge" },
+  ],
+  rewards: ["Access to White Lady (story)"],
+  summary:
+    "Leader of the Mantis Traitors who broke with the Mantis Tribe. Huge hitbox, slow telegraphs, but enormous damage. Pogoing the slam is the cleanest tell.",
+  verified: false,
+  wikiSlug: "Traitor_Lord",
+  sources: ["https://hollowknight.fandom.com/wiki/Traitor_Lord"],
+});
+
+export default data;

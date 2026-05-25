@@ -50,6 +50,15 @@ export const BossHpSchema = z
   })
   .partial();
 
+export const BossImageSchema = z.object({
+  url: z.string().url(),
+  width: z.number().int().positive().optional(),
+  height: z.number().int().positive().optional(),
+  attribution: z.string().optional(),
+  license: z.string().optional(),
+});
+export type BossImage = z.infer<typeof BossImageSchema>;
+
 export const BossSchema = z.object({
   slug: slug,
   name: z.string(),
@@ -71,6 +80,9 @@ export const BossSchema = z.object({
   summary: z.string(),
   verified: z.boolean().default(false),
   sources: z.array(z.string().url()).optional(),
+  wikiSlug: z.string().optional(),
+  wikiUrl: z.string().url().optional(),
+  image: BossImageSchema.optional(),
   updatedAt: z.string().datetime().optional(),
 });
 

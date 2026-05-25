@@ -1,0 +1,27 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "dung-defender",
+  name: "Dung Defender",
+  game: "hk",
+  optional: false,
+  hp: { base: 350 },
+  geo: 0,
+  area: { slug: "royal-waterways", name: "Royal Waterways" },
+  attacks: [
+    { name: "Dung ball throw" },
+    { name: "Underground dive" },
+    { name: "Spike emerge" },
+  ],
+  rewards: ["Defender's Crest charm", "Access to the Junk Pit"],
+  hunterJournal: {
+    notes: "A jolly knight who insists on defending Hallownest from beneath, regardless of what crawls in or out.",
+  },
+  summary:
+    "The cheerful guardian of the Royal Waterways. Burrows through dung and pops up beneath the player, making vertical awareness critical.",
+  verified: false,
+  wikiSlug: "Dung_Defender",
+  sources: ["https://hollowknight.fandom.com/wiki/Dung_Defender"],
+});
+
+export default data;

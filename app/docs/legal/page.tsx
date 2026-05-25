@@ -31,7 +31,7 @@ export default function LegalPage() {
         </p>
       </DocsSection>
 
-      <DocsSection title="What we host (and what we don't)">
+      <DocsSection title="What we host (and what we don’t)">
         <p>
           We host <strong>facts</strong> — boss HP values, geo drop counts, area names,
           slugs, and brief original summaries. Facts are not copyrightable in most
@@ -70,11 +70,11 @@ export default function LegalPage() {
         </p>
       </DocsSection>
 
-      <DocsSection title="No monetization of Team Cherry's IP">
+      <DocsSection title="No monetization of Team Cherry’s IP">
         <p>
-          Team Cherry&apos;s fan-content policy disallows crowdfunding tied to their IP. We
-          honor that — HallownestAPI is free, has no paid tier, and never will. Hosting and
-          maintenance are covered by sponsors of the maintainers&apos; open-source work,
+          Team Cherry’s fan-content policy disallows crowdfunding tied to their IP. We
+          honor that — HallownestAPI is free, has no paid tier, and never will. Hosting
+          and maintenance are covered by sponsors of the maintainers’ open-source work,
           not by selling access to this data.
         </p>
       </DocsSection>

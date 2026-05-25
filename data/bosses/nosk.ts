@@ -1,0 +1,27 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "nosk",
+  name: "Nosk",
+  game: "hk",
+  optional: true,
+  hp: { base: 540 },
+  geo: 0,
+  area: { slug: "deepnest", name: "Deepnest" },
+  attacks: [
+    { name: "Ceiling drop" },
+    { name: "Charge" },
+    { name: "Spawn doppelgängers", description: "Releases small mimics of the Knight that crawl and explode." },
+  ],
+  rewards: ["Hunter's Journal entry"],
+  hunterJournal: {
+    notes: "A predator that lures prey by wearing the face of those they have lost.",
+  },
+  summary:
+    "A horrifying shape-shifter that imitates the Knight to lure the player into a trap in Deepnest. Mostly mobile, with attacks that punish careless movement.",
+  verified: false,
+  wikiSlug: "Nosk",
+  sources: ["https://hollowknight.fandom.com/wiki/Nosk"],
+});
+
+export default data;

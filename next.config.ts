@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "static.wikia.nocookie.net",
+        pathname: "/hollowknight/**",
+      },
+      {
+        protocol: "https",
+        hostname: "hollowknight.fandom.com",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

@@ -1,0 +1,23 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "brothers-oro-and-mato",
+  name: "Brothers Oro & Mato",
+  game: "hk",
+  optional: true,
+  hp: { base: 950 },
+  geo: 0,
+  area: { slug: "godhome", name: "Godhome" },
+  attacks: [
+    { name: "Synchronised dash slash" },
+    { name: "Brother pillar" },
+    { name: "Cross slash" },
+  ],
+  summary:
+    "Godhome reunion of the estranged nail masters Oro and Mato, fighting as a duo. Their attacks alternate and overlap, forcing the player to track two threats at once.",
+  verified: false,
+  wikiSlug: "Brothers Oro & Mato",
+  sources: ["https://hollowknight.fandom.com/wiki/Brothers_Oro_%26_Mato"],
+});
+
+export default data;

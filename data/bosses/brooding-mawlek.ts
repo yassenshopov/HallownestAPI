@@ -1,0 +1,24 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "brooding-mawlek",
+  name: "Brooding Mawlek",
+  game: "hk",
+  optional: true,
+  hp: { base: 200 },
+  geo: 100,
+  area: { slug: "forgotten-crossroads", name: "Forgotten Crossroads" },
+  attacks: [
+    { name: "Acid spit" },
+    { name: "Pounce" },
+    { name: "Triple infection spray" },
+  ],
+  rewards: ["Mask Shard"],
+  summary:
+    "A hidden mawlek matron lurking beneath the Forgotten Crossroads. Slow but heavy-hitting. Easy to bait into ceiling attacks if you stay near the walls.",
+  verified: false,
+  wikiSlug: "Brooding_Mawlek",
+  sources: ["https://hollowknight.fandom.com/wiki/Brooding_Mawlek"],
+});
+
+export default data;

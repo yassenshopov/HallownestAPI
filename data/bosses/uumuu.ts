@@ -1,0 +1,23 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "uumuu",
+  name: "Uumuu",
+  game: "hk",
+  optional: false,
+  hp: { base: 250 },
+  geo: 0,
+  area: { slug: "fog-canyon", name: "Fog Canyon" },
+  attacks: [
+    { name: "Electric pulse" },
+    { name: "Explosive uoma summon" },
+  ],
+  rewards: ["Access to the Teacher's Archive"],
+  summary:
+    "A massive jellyfish in Monomon's Archive. Immune to direct hits — you must trigger nearby Uomas to explode against its shield. Less a fight and more a puzzle.",
+  verified: false,
+  wikiSlug: "Uumuu",
+  sources: ["https://hollowknight.fandom.com/wiki/Uumuu"],
+});
+
+export default data;

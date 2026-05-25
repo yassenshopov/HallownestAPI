@@ -1,0 +1,23 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "soul-warrior",
+  name: "Soul Warrior",
+  game: "hk",
+  optional: false,
+  hp: { base: 130 },
+  geo: 50,
+  area: { slug: "city-of-tears", name: "City of Tears" },
+  attacks: [
+    { name: "Dash slash" },
+    { name: "Soul orb", description: "Conjures a homing energy orb." },
+    { name: "Teleport strike" },
+  ],
+  summary:
+    "An apprentice of the Soul Sanctum guarding the path to the Soul Master. Telegraphed but fast, and the first introduction to soul-based attacks.",
+  verified: false,
+  wikiSlug: "Soul_Warrior",
+  sources: ["https://hollowknight.fandom.com/wiki/Soul_Warrior"],
+});
+
+export default data;

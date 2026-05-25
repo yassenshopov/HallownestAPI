@@ -1,0 +1,27 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "zote-the-mighty",
+  name: "Zote the Mighty",
+  game: "hk",
+  optional: true,
+  hp: { base: 250 },
+  geo: 0,
+  area: { slug: "colosseum-of-fools", name: "Colosseum of Fools" },
+  attacks: [
+    { name: "Wide swing" },
+    { name: "Vertical lunge" },
+  ],
+  rewards: ["Hunter's Journal entry"],
+  hunterJournal: {
+    notes:
+      "Self-styled 57th Precept maker. Carries a nail named Life Ender. The nail does not, in fact, end many lives.",
+  },
+  summary:
+    "Comic relief turned arena combatant. Appears as a fight in the Trial of the Warrior, after a brief pre-fight monologue.",
+  verified: false,
+  wikiSlug: "Zote_the_Mighty",
+  sources: ["https://hollowknight.fandom.com/wiki/Zote_the_Mighty"],
+});
+
+export default data;

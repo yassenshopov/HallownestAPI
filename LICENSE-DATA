@@ -1,0 +1,39 @@
+HallownestAPI structured game data is licensed under the
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License (CC BY-NC-SA 4.0).
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format.
+  Adapt — remix, transform, and build upon the material.
+
+Under the following terms:
+
+  Attribution    — You must give appropriate credit, link to this project,
+                   and indicate if changes were made.
+  NonCommercial  — You may not use the material for commercial purposes.
+  ShareAlike     — If you remix, transform, or build upon the material,
+                   you must distribute your contributions under the same
+                   license as the original.
+
+No additional restrictions — You may not apply legal terms or technological
+measures that legally restrict others from doing anything the license permits.
+
+Full license text: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+---
+
+Source attribution
+Where a data entry derives from the Hollow Knight Wiki
+(https://hollowknight.fandom.com/) or another community wiki, the upstream
+source is cited per entity in the `sources` field of its JSON payload. Those
+upstream wikis are themselves licensed under CC BY-SA 3.0 unless otherwise
+indicated, and credit flows through.
+
+Images linked from upstream wikis are hosted by those wikis and remain
+subject to their original licenses (typically CC BY-SA 3.0). HallownestAPI
+does not host these images; it only references their canonical URLs.
+
+Hollow Knight and Silksong are trademarks of Team Cherry. HallownestAPI is
+a fan-made, non-commercial project and is not affiliated with or endorsed
+by Team Cherry.

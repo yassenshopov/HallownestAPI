@@ -1,0 +1,24 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "grey-prince-zote",
+  name: "Grey Prince Zote",
+  game: "hk",
+  optional: true,
+  hp: { base: 350 },
+  geo: 0,
+  area: { slug: "dirtmouth", name: "Dirtmouth" },
+  attacks: [
+    { name: "Body slam" },
+    { name: "Pillar drop" },
+    { name: "Zoteling rain" },
+  ],
+  rewards: ["Essence (300, scales with repeats)"],
+  summary:
+    "Bretta's dream version of Zote, the love of her life rendered as an unstoppable champion. Reachable via Bretta's house in Dirtmouth after the Colosseum.",
+  verified: false,
+  wikiSlug: "Grey_Prince_Zote",
+  sources: ["https://hollowknight.fandom.com/wiki/Grey_Prince_Zote"],
+});
+
+export default data;

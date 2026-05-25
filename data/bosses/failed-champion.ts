@@ -1,0 +1,24 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "failed-champion",
+  name: "Failed Champion",
+  game: "hk",
+  optional: true,
+  hp: { base: 1100 },
+  geo: 0,
+  area: { slug: "forgotten-crossroads", name: "Forgotten Crossroads" },
+  attacks: [
+    { name: "Mace swing (faster)" },
+    { name: "Ground slam (debris)" },
+    { name: "Triple jump charge" },
+  ],
+  rewards: ["Essence (300)"],
+  summary:
+    "Dream Nail variant of the False Knight. Same moveset, much higher HP and reaction speed. Found via the False Knight's corpse.",
+  verified: false,
+  wikiSlug: "Failed_Champion",
+  sources: ["https://hollowknight.fandom.com/wiki/Failed_Champion"],
+});
+
+export default data;

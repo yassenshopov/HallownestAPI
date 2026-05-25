@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:112";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -82,12 +82,20 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <TooltipProvider delay={200}>
-              <SiteHeader />
-              <main className="flex flex-1 flex-col">{children}</main>
-              <SiteFooter />
-              <Toaster richColors />
-            </TooltipProvider>
+          <TooltipProvider delay={200}>
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-1.5 focus:text-sm focus:text-primary-foreground focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
+            >
+              Skip to content
+            </a>
+            <SiteHeader />
+            <main id="main" className="flex flex-1 flex-col">
+              {children}
+            </main>
+            <SiteFooter />
+            <Toaster richColors />
+          </TooltipProvider>
           </ThemeProvider>
         </AuthProvider>
       </body>

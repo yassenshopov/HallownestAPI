@@ -1,0 +1,24 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "markoth",
+  name: "Markoth",
+  game: "hk",
+  optional: true,
+  hp: { base: 500 },
+  geo: 0,
+  area: { slug: "kingdoms-edge", name: "Kingdom's Edge" },
+  attacks: [
+    { name: "Spinning nail" },
+    { name: "Spike rain" },
+    { name: "Orbiting shield" },
+  ],
+  rewards: ["Essence (250)"],
+  summary:
+    "Often considered the hardest Dream Warrior. Found at the top of Kingdom's Edge. Combines vertical platforming, spike rain, and an orbiting shield that blocks attacks.",
+  verified: false,
+  wikiSlug: "Markoth",
+  sources: ["https://hollowknight.fandom.com/wiki/Markoth"],
+});
+
+export default data;

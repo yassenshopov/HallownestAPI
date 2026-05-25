@@ -81,6 +81,29 @@ export default data;
 
 Then register it in `data/bosses/index.ts`. The dev server hot-reloads. The build refuses anything that doesn't parse.
 
+## Wiki image cache
+
+Every boss with a `wikiSlug` gets enriched at build time with an image URL
+and a canonical wiki page URL pulled from the Fandom MediaWiki API. The
+script is at `scripts/fetch-wiki.mjs` and the result is committed to
+`data/wiki-cache.json` so builds stay deterministic and offline-safe.
+
+```bash
+node scripts/fetch-wiki.mjs
+```
+
+Images are served from the upstream wiki CDN (`static.wikia.nocookie.net`)
+and are credited per-entry under their original CC BY-SA 3.0 license.
+HallownestAPI does not host these images.
+
+## Coverage
+
+- **46 bosses** indexed in `v0`, covering the full Hollow Knight roster
+  (base game, Dream Warriors / Variants, Hidden Dreams, Grimm Troupe, Lifeblood,
+  Godmaster Pantheons).
+- Silksong coverage is held back until release-week dust settles. Reserved
+  in the schema (`game: "silksong"`).
+
 ## Roadmap
 
 - **v0** (now): bosses only, REST list + detail, docs.

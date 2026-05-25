@@ -1,0 +1,25 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "pure-vessel",
+  name: "Pure Vessel",
+  game: "hk",
+  optional: true,
+  hp: { base: 1200 },
+  geo: 0,
+  area: { slug: "godhome", name: "Godhome" },
+  attacks: [
+    { name: "Triple slash" },
+    { name: "Void tendrils" },
+    { name: "Soul orbs" },
+    { name: "Focused descend" },
+  ],
+  rewards: ["Path to Absolute Radiance"],
+  summary:
+    "The Hollow Knight as it was meant to be: silent, perfect, unbroken. The fifth Pantheon's final fight. Tighter timings and no infection animations to telegraph attacks.",
+  verified: false,
+  wikiSlug: "Pure_Vessel",
+  sources: ["https://hollowknight.fandom.com/wiki/Pure_Vessel"],
+});
+
+export default data;

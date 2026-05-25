@@ -1,0 +1,22 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "flukemarm",
+  name: "Flukemarm",
+  game: "hk",
+  optional: true,
+  hp: { base: 250 },
+  geo: 50,
+  area: { slug: "royal-waterways", name: "Royal Waterways" },
+  attacks: [
+    { name: "Spawn flukes", description: "Endlessly births small flukes that home in on the player." },
+  ],
+  rewards: ["Flukenest charm"],
+  summary:
+    "A massive, immobile fluke that births swarms of smaller flukes. The fight is entirely about clearing adds while landing hits on the matriarch.",
+  verified: false,
+  wikiSlug: "Flukemarm",
+  sources: ["https://hollowknight.fandom.com/wiki/Flukemarm"],
+});
+
+export default data;

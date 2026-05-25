@@ -1,0 +1,24 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "collector",
+  name: "The Collector",
+  game: "hk",
+  optional: true,
+  hp: { base: 250 },
+  geo: 0,
+  area: { slug: "city-of-tears", name: "City of Tears" },
+  attacks: [
+    { name: "Jar drop", description: "Throws jars containing Hallownest creatures." },
+    { name: "Long jump" },
+    { name: "Crawl" },
+  ],
+  rewards: ["Collector's Map", "Access to all Grub locations"],
+  summary:
+    "A strange, grinning collector hoarding jars filled with Hallownest's creatures. Found at the top of the Tower of Love. Beating him gives you the Collector's Map.",
+  verified: false,
+  wikiSlug: "Collector",
+  sources: ["https://hollowknight.fandom.com/wiki/Collector"],
+});
+
+export default data;

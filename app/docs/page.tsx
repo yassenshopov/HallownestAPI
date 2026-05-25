@@ -53,7 +53,7 @@ export default function DocsIndex() {
           code={`curl https://hallownestapi.dev/api/v1/boss/false-knight`}
         />
         <p>
-          That&apos;s it. See{" "}
+          That’s it. See{" "}
           <Link href="/docs/quickstart" className="underline-offset-4 hover:underline">
             Quickstart
           </Link>{" "}

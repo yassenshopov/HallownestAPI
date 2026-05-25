@@ -3,12 +3,16 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { HollowMark } from "@/components/hollow-mark";
+import { siteConfig } from "@/lib/site-config";
 
 const nav = [
   { href: "/bosses", label: "Bosses" },
   { href: "/docs", label: "Docs" },
   { href: "/api/v1", label: "API" },
 ];
+
+const FOCUS_RING =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -27,20 +31,26 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-6 px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
+        <Link
+          href="/"
+          className={`flex items-center gap-2 rounded-md ${FOCUS_RING}`}
+          aria-label="HallownestAPI home"
+        >
           <HollowMark className="h-6 w-6 text-primary" />
-          <span className="font-semibold tracking-tight">HallownestAPI</span>
+          <span className="font-semibold tracking-tight" translate="no">
+            HallownestAPI
+          </span>
           <span className="hidden rounded-full border border-border/70 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground sm:inline">
             v0
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 text-sm md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 text-sm md:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              className={`rounded-md px-3 py-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground ${FOCUS_RING}`}
             >
               {item.label}
             </Link>
@@ -49,10 +59,10 @@ export function SiteHeader() {
 
         <div className="ml-auto flex items-center gap-1">
           <a
-            href="https://github.com/"
+            href={siteConfig.githubUrl}
             target="_blank"
             rel="noreferrer noopener"
-            aria-label="GitHub"
+            aria-label="HallownestAPI on GitHub"
             className={buttonVariants({ variant: "ghost", size: "icon" })}
           >
             <GithubIcon className="h-4 w-4" />

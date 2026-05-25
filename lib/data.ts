@@ -1,5 +1,32 @@
-import { bosses, bossBySlug } from "@/data/bosses";
-import type { Boss, Game, Paginated } from "@/lib/schema";
+import { bosses as rawBosses, bossBySlug as rawBossBySlug } from "@/data/bosses";
+import wikiCacheJson from "@/data/wiki-cache.json";
+import type { Boss, BossImage, Game, Paginated } from "@/lib/schema";
+
+type WikiCacheEntry = {
+  wikiSlug?: string;
+  wikiUrl?: string;
+  image?: BossImage;
+};
+
+const wikiCache = wikiCacheJson as Record<string, WikiCacheEntry>;
+
+function withWiki(boss: Boss): Boss {
+  const entry = wikiCache[boss.slug];
+  if (!entry) return boss;
+  return {
+    ...boss,
+    wikiUrl: boss.wikiUrl ?? entry.wikiUrl,
+    image: boss.image ?? entry.image,
+  };
+}
+
+const enrichedBosses: Boss[] = rawBosses.map(withWiki);
+const enrichedBySlug = new Map(enrichedBosses.map((b) => [b.slug, b]));
+
+export const bosses = enrichedBosses;
+export const bossBySlug = enrichedBySlug;
+// Re-export raw map under a separate name in case callers want unmerged data.
+export const rawBossLookup = rawBossBySlug;
 
 export type BossListFilters = {
   game?: Game;
@@ -14,7 +41,7 @@ export function listBosses(filters: BossListFilters = {}): {
 } {
   const { game, search, limit = 20, offset = 0 } = filters;
 
-  let rows = bosses;
+  let rows = enrichedBosses;
   if (game) rows = rows.filter((b) => b.game === game);
   if (search) {
     const q = search.trim().toLowerCase();
@@ -32,7 +59,7 @@ export function listBosses(filters: BossListFilters = {}): {
 }
 
 export function getBoss(slug: string): Boss | undefined {
-  return bossBySlug.get(slug);
+  return enrichedBySlug.get(slug);
 }
 
 export function paginateUrls({

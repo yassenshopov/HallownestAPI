@@ -1,0 +1,35 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "the-radiance",
+  name: "The Radiance",
+  game: "hk",
+  optional: true,
+  hp: { base: 1700 },
+  geo: 0,
+  area: { slug: "temple-of-the-black-egg", name: "Temple of the Black Egg" },
+  phases: [
+    { name: "Sword swarm" },
+    { name: "Sun beam" },
+    { name: "Climb to ascension" },
+    { name: "Dream No More" },
+  ],
+  attacks: [
+    { name: "Spike floor" },
+    { name: "Light spear barrage" },
+    { name: "Sword orbit" },
+    { name: "Radiant beam" },
+  ],
+  rewards: ["Dream No More ending"],
+  hunterJournal: {
+    notes:
+      "The Old Light, once kin and progenitor of moths. Its dream lashed out and seeded the plague.",
+  },
+  summary:
+    "The true final boss, reached via the Awoken Dream Nail inside the Hollow Knight fight. Long, vertical, and brutal — Hornet's binding shows up mid-fight.",
+  verified: false,
+  wikiSlug: "Radiance",
+  sources: ["https://hollowknight.fandom.com/wiki/Radiance"],
+});
+
+export default data;

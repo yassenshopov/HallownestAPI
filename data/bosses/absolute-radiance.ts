@@ -1,0 +1,31 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "absolute-radiance",
+  name: "Absolute Radiance",
+  game: "hk",
+  optional: true,
+  hp: { base: 2200 },
+  geo: 0,
+  area: { slug: "godhome", name: "Godhome" },
+  phases: [
+    { name: "Sword orbits + sun beam" },
+    { name: "Light spear barrage" },
+    { name: "Pillar ascent" },
+    { name: "Final platforming gauntlet" },
+  ],
+  attacks: [
+    { name: "Tracking sword orbit" },
+    { name: "Spike floor" },
+    { name: "Light spear waves" },
+    { name: "Sun beam" },
+  ],
+  rewards: ["Embrace the Void ending"],
+  summary:
+    "The hardest fight in Hollow Knight. The Radiance at full power, locked behind the Pantheon of Hallownest. Pure rhythm and pattern memorisation.",
+  verified: false,
+  wikiSlug: "Absolute_Radiance",
+  sources: ["https://hollowknight.fandom.com/wiki/Absolute_Radiance"],
+});
+
+export default data;

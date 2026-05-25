@@ -16,7 +16,7 @@ export default function QuickstartPage() {
       description="From zero to a parsed boss in three steps."
     >
       <DocsSection title="1. Pick an endpoint">
-        <p>The two endpoints you&apos;ll use most:</p>
+        <p>The two endpoints you’ll use most:</p>
         <ul className="list-disc space-y-1 pl-5 text-foreground/90">
           <li>
             <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-sm">

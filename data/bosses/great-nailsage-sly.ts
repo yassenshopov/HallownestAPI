@@ -1,0 +1,28 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "great-nailsage-sly",
+  name: "Great Nailsage Sly",
+  game: "hk",
+  optional: true,
+  hp: { base: 1100 },
+  geo: 0,
+  area: { slug: "godhome", name: "Godhome" },
+  phases: [
+    { name: "Sage style" },
+    { name: "Ascended", description: "Drops the cloak, doubles down on nail arts." },
+  ],
+  attacks: [
+    { name: "Cyclone Slash" },
+    { name: "Great Slash" },
+    { name: "Dash Slash" },
+    { name: "Aerial pogo" },
+  ],
+  summary:
+    "Godhome ascension of the old nail master Sly. Uses every nail art from the player's kit against them, with a second phase that drops his cloak for max aggression.",
+  verified: false,
+  wikiSlug: "Great_Nailsage_Sly",
+  sources: ["https://hollowknight.fandom.com/wiki/Great_Nailsage_Sly"],
+});
+
+export default data;

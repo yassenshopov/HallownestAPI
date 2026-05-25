@@ -17,16 +17,24 @@ export function CodeBlock({
   language?: string;
   className?: string;
 }) {
-  const [copied, setCopied] = React.useState(false);
+  const [status, setStatus] = React.useState<"idle" | "copied" | "error">("idle");
+  const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  React.useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
 
   const onCopy = async () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     try {
       await navigator.clipboard.writeText(code);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      setStatus("copied");
     } catch {
-      /* clipboard not available */
+      setStatus("error");
     }
+    timeoutRef.current = setTimeout(() => setStatus("idle"), 1500);
   };
 
   return (
@@ -51,15 +59,29 @@ export function CodeBlock({
           size="sm"
           onClick={onCopy}
           className="h-7 gap-1.5 px-2 text-xs"
-          aria-label="Copy code"
+          aria-label={status === "copied" ? "Copied to clipboard" : "Copy code"}
         >
-          {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
-          {copied ? "Copied" : "Copy"}
+          {status === "copied" ? (
+            <Check aria-hidden="true" className="h-3.5 w-3.5" />
+          ) : (
+            <Copy aria-hidden="true" className="h-3.5 w-3.5" />
+          )}
+          {status === "copied" ? "Copied" : "Copy"}
         </Button>
       </div>
-      <pre className="overflow-x-auto p-4 font-mono text-xs leading-relaxed sm:text-[13px]">
+      <pre
+        tabIndex={0}
+        className="overflow-x-auto p-4 font-mono text-xs leading-relaxed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset sm:text-[13px]"
+      >
         <code>{code}</code>
       </pre>
+      <span role="status" aria-live="polite" className="sr-only">
+        {status === "copied"
+          ? "Copied to clipboard"
+          : status === "error"
+            ? "Copy failed"
+            : ""}
+      </span>
     </div>
   );
 }

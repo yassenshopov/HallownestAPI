@@ -33,6 +33,7 @@ const data: Boss = BossSchema.parse({
   summary:
     "First major boss of Hollow Knight. Guards the way deeper into the Forgotten Crossroads. Has an armoured phase and a vulnerable maggot phase.",
   verified: false,
+  wikiSlug: "False_Knight",
   sources: ["https://hollowknight.fandom.com/wiki/False_Knight"],
 });
 

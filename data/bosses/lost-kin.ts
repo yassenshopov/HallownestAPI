@@ -1,0 +1,24 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "lost-kin",
+  name: "Lost Kin",
+  game: "hk",
+  optional: true,
+  hp: { base: 1150 },
+  geo: 0,
+  area: { slug: "ancient-basin", name: "Ancient Basin" },
+  attacks: [
+    { name: "Spawn Balloons", description: "Periodically summons infection balloons." },
+    { name: "Slam" },
+    { name: "Aerial divebomb" },
+  ],
+  rewards: ["Essence (400)"],
+  summary:
+    "Dream Nail variant of the Broken Vessel. Much faster pattern with constant balloon spawns. One of the highest essence rewards in the game.",
+  verified: false,
+  wikiSlug: "Lost_Kin",
+  sources: ["https://hollowknight.fandom.com/wiki/Lost_Kin"],
+});
+
+export default data;

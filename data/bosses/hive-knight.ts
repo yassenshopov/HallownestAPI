@@ -1,0 +1,28 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "hive-knight",
+  name: "Hive Knight",
+  game: "hk",
+  optional: true,
+  hp: { base: 800 },
+  geo: 0,
+  area: { slug: "hive", name: "The Hive" },
+  attacks: [
+    { name: "Stinger dash" },
+    { name: "Bee summon" },
+    { name: "Aerial dive" },
+    { name: "Stab tracking" },
+  ],
+  rewards: ["Hiveblood charm"],
+  hunterJournal: {
+    notes: "Loyal champion of the Hive. Stings with vigour even as his queen wanes.",
+  },
+  summary:
+    "Added by the Hidden Dreams content update. Fast and aggressive with stab-tracking attacks. Rewards the Hiveblood charm.",
+  verified: false,
+  wikiSlug: "Hive_Knight",
+  sources: ["https://hollowknight.fandom.com/wiki/Hive_Knight"],
+});
+
+export default data;

@@ -1,0 +1,23 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "galien",
+  name: "Galien",
+  game: "hk",
+  optional: true,
+  hp: { base: 500 },
+  geo: 0,
+  area: { slug: "deepnest", name: "Deepnest" },
+  attacks: [
+    { name: "Giant scythe", description: "Hurls a huge scythe that orbits the arena." },
+    { name: "Mini scythe ring" },
+  ],
+  rewards: ["Essence (200)"],
+  summary:
+    "A spectral reaper in a Deepnest graveyard. The signature attack is a massive scythe that loops back, forcing the player to track its path while dodging.",
+  verified: false,
+  wikiSlug: "Galien",
+  sources: ["https://hollowknight.fandom.com/wiki/Galien"],
+});
+
+export default data;

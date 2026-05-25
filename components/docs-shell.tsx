@@ -23,7 +23,9 @@ export function DocsPage({
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h1>
+        <h1 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+          {title}
+        </h1>
         {description ? (
           <p className="max-w-2xl text-balance text-muted-foreground">{description}</p>
         ) : null}

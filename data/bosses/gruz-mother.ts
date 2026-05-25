@@ -1,0 +1,22 @@
+import { BossSchema, type Boss } from "@/lib/schema";
+
+const data: Boss = BossSchema.parse({
+  slug: "gruz-mother",
+  name: "Gruz Mother",
+  game: "hk",
+  optional: false,
+  hp: { base: 80 },
+  geo: 35,
+  area: { slug: "forgotten-crossroads", name: "Forgotten Crossroads" },
+  attacks: [
+    { name: "Charge" },
+    { name: "Pregnancy burst", description: "Splits into smaller Gruzzers on death." },
+  ],
+  summary:
+    "An overgrown Gruzzer that hovers and dive-bombs the player. Spawns a swarm of smaller Gruzzers on defeat. Often the player's first proper boss.",
+  verified: false,
+  wikiSlug: "Gruz_Mother",
+  sources: ["https://hollowknight.fandom.com/wiki/Gruz_Mother"],
+});
+
+export default data;

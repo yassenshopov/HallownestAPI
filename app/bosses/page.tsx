@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GAMES } from "@/lib/schema";
-import { bosses } from "@/data/bosses";
+import { bosses } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Bosses",
   description:
     "Browse every Hollow Knight and Silksong boss currently indexed in HallownestAPI.",
 };
+
+const FOCUS_RING =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export default function BossesPage() {
   const byGame = {
@@ -38,24 +41,51 @@ export default function BossesPage() {
         return (
           <section key={game} className="mb-12">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-xl font-semibold tracking-tight">{GAMES[game].name}</h2>
+              <h2 className="text-xl font-semibold tracking-tight">
+                {GAMES[game].name}
+              </h2>
               <Badge variant="secondary" className="font-mono text-xs">
                 {list.length} {list.length === 1 ? "entry" : "entries"}
               </Badge>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3" role="list">
               {list.map((boss) => (
-                <Link key={boss.slug} href={`/bosses/${boss.slug}`} className="group">
-                  <Card className="h-full border-border/60 bg-card/60 transition-colors hover:border-primary/40 hover:bg-card">
-                    <CardHeader>
-                      <div className="flex items-center justify-between gap-2">
-                        <CardTitle className="text-lg">{boss.name}</CardTitle>
-                        <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground" />
+                <li key={boss.slug}>
+                  <Link
+                    href={`/bosses/${boss.slug}`}
+                    className={`group block h-full overflow-hidden rounded-lg border border-border/60 bg-card/60 transition-colors hover:border-primary/40 hover:bg-card ${FOCUS_RING}`}
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden bg-muted/40">
+                      {boss.image?.url ? (
+                        <Image
+                          src={boss.image.url}
+                          alt={`Artwork of ${boss.name} from the Hollow Knight Wiki`}
+                          fill
+                          sizes="(min-width: 1024px) 320px, (min-width: 768px) 50vw, 100vw"
+                          className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                          unoptimized
+                        />
+                      ) : (
+                        <div
+                          aria-hidden="true"
+                          className="absolute inset-0 grid place-items-center text-xs text-muted-foreground"
+                        >
+                          no image
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="space-y-3 p-4">
+                      <div className="flex items-start justify-between gap-2">
+                        <h3 className="text-lg font-semibold tracking-tight">
+                          {boss.name}
+                        </h3>
+                        <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
                       </div>
-                    </CardHeader>
-                    <CardContent className="space-y-3">
-                      <p className="line-clamp-3 text-sm text-muted-foreground">{boss.summary}</p>
+                      <p className="line-clamp-3 text-sm text-muted-foreground">
+                        {boss.summary}
+                      </p>
                       <div className="flex flex-wrap gap-1.5">
                         <Badge variant="outline" className="text-xs">
                           {boss.area.name}
@@ -66,8 +96,11 @@ export default function BossesPage() {
                           </Badge>
                         ) : null}
                         {boss.hp?.base ? (
-                          <Badge variant="outline" className="font-mono text-xs">
-                            {boss.hp.base} HP
+                          <Badge
+                            variant="outline"
+                            className="font-mono text-xs tabular-nums"
+                          >
+                            {boss.hp.base}&nbsp;HP
                           </Badge>
                         ) : null}
                         {!boss.verified ? (
@@ -79,11 +112,11 @@ export default function BossesPage() {
                           </Badge>
                         ) : null}
                       </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                    </div>
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
         );
       })}
